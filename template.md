@@ -1,196 +1,215 @@
-# Software Requirements Specification
-## For <project name>
+# Especificación de requisitos 
+## Del proyecto <project name>
 
-Version 0.1  
-Prepared by <author>  
-<organization>  
-<date created>  
+Versión 0.1  
+Generada por <author>  
+<organización>  
+<fecha creación>  
 
-Table of Contents
+Índice
 =================
-* [Revision History](#revision-history)
-* 1 [Introduction](#1-introduction)
-  * 1.1 [Document Purpose](#11-document-purpose)
-  * 1.2 [Product Scope](#12-product-scope)
-  * 1.3 [Definitions, Acronyms and Abbreviations](#13-definitions-acronyms-and-abbreviations)
-  * 1.4 [References](#14-references)
-  * 1.5 [Document Overview](#15-document-overview)
-* 2 [Product Overview](#2-product-overview)
-  * 2.1 [Product Perspective](#21-product-perspective)
-  * 2.2 [Product Functions](#22-product-functions)
-  * 2.3 [Product Constraints](#23-product-constraints)
-  * 2.4 [User Characteristics](#24-user-characteristics)
-  * 2.5 [Assumptions and Dependencies](#25-assumptions-and-dependencies)
-  * 2.6 [Apportioning of Requirements](#26-apportioning-of-requirements)
-* 3 [Requirements](#3-requirements)
-  * 3.1 [External Interfaces](#31-external-interfaces)
-    * 3.1.1 [User Interfaces](#311-user-interfaces)
-    * 3.1.2 [Hardware Interfaces](#312-hardware-interfaces)
-    * 3.1.3 [Software Interfaces](#313-software-interfaces)
-  * 3.2 [Functional](#32-functional)
-  * 3.3 [Quality of Service](#33-quality-of-service)
-    * 3.3.1 [Performance](#331-performance)
-    * 3.3.2 [Security](#332-security)
-    * 3.3.3 [Reliability](#333-reliability)
-    * 3.3.4 [Availability](#334-availability)
-  * 3.4 [Compliance](#34-compliance)
-  * 3.5 [Design and Implementation](#35-design-and-implementation)
-    * 3.5.1 [Installation](#351-installation)
-    * 3.5.2 [Distribution](#352-distribution)
-    * 3.5.3 [Maintainability](#353-maintainability)
-    * 3.5.4 [Reusability](#354-reusability)
-    * 3.5.5 [Portability](#355-portability)
-    * 3.5.6 [Cost](#356-cost)
-    * 3.5.7 [Deadline](#357-deadline)
-    * 3.5.8 [Proof of Concept](#358-proof-of-concept)
-* 4 [Verification](#4-verification)
-* 5 [Appendixes](#5-appendixes)
-
-## Revision History
+* [Versiones](#versiones)
+* 1 [Introducción](#1-introducción)
+  * 1.1 [Objetivo del documento](#11-objetivo-del-documento)
+  * 1.2 [Ámbito del proyecto](#12-ámbito-del-proyecto)
+  * 1.3 [Definiciones, acrónimos y abreviaturas](#13-definiciones-acrónimos-y-abreviaturas)
+  * 1.4 [Referencias](#14-referencias)
+  * 1.5 [Resumen del documento](#15-resumen-del-documento)
+* 2 [Vista general del producto](#2-vista-general-del-producto)
+  * 2.1 [Perspectiva del producto](#21-perspectiva-del-producto)
+  * 2.2 [Funciones del producto](#22-funciones-del-producto)
+  * 2.3 [Restricciones del producto](#23-restricciones-del-producto)
+  * 2.4 [Perfiles de usuario](#24-perfiles-de-usuario)
+  * 2.5 [Suposiciones y dependencias](#25-suposiciones-y-dependencias)
+* 3 [Interfaces externas](#3-interfaces-externas)
+    * 3.1 [Interfaces con el Usuario](#31-interfaces-con-el-usuario)
+    * 3.2 [Interfaces con el Hardware](#32-interfaces-con-el-hardware)
+    * 3.3 [Interfaces con el Software](#33-interfaces-con-el-software)
+* 4 [Requisitos](#4-requisitos)
+  * 4.1 [Precedencia y prioridad](#41-precedencia-y-prioridad) 
+  * 4.2 [Funcionales](#42-funcionales)
+  * 4.3 [Calidad de Servicio](#43-calidad-de-servicio)
+    * 4.3.1 [Rendimiento](#431-rendimiento)
+    * 4.3.2 [Seguridad](#432-seguridad)
+    * 4.3.3 [Fiabilidad](#433-fiabilidad)
+    * 4.3.4 [Disponibilidad](#434-disponibilidad)
+  * 4.4 [Normativas aplicables](#44-normativas-aplicables)
+  * 4.5 [Diseño e implementación](#45-diseño-e-implementación)
+    * 4.5.1 [Instalación](#451-instalación)
+    * 4.5.2 [Distribución](#452-distribución)
+    * 4.5.3 [Mantenimiento](#453-mantenimiento)
+    * 4.5.4 [Reusabilidad](#454-reusabilidad)
+    * 4.5.5 [Portabilidad](#455-portabilidad)
+    * 4.5.6 [Coste](#456-coste)
+    * 4.5.7 [Fecha de Entrega](#457-fecha-de-entrega)
+* 5 [Verificación](#5-verificación)
+* 6 [Apendices](#6-apendices) 
+  
+## Versiones
 | Name | Date    | Reason For Changes  | Version   |
 | ---- | ------- | ------------------- | --------- |
 |      |         |                     |           |
 |      |         |                     |           |
 |      |         |                     |           |
 
-## 1. Introduction
-> This section should provide an overview of the entire document
+## 1. Introducción
+Esta sección debe proporcionar una visión general de todo el documento.
 
-### 1.1 Document Purpose
-Describe the purpose of the SRS and its intended audience.
+### 1.1 Objetivo del documento
+Describa el propósito del SRS y su público objetivo.
 
-### 1.2 Product Scope
-Identify the product whose software requirements are specified in this document, including the revision or release number. Explain what the product that is covered by this SRS will do, particularly if this SRS describes only part of the system or a single subsystem. Provide a short description of the software being specified and its purpose, including relevant benefits, objectives, and goals. Relate the software to corporate goals or business strategies. If a separate vision and scope document is available, refer to it rather than duplicating its contents here.
+### 1.2 Ámbito del proyecto
+Identifique el producto cuyos requisitos de software se especifican en este documento, incluida la revisión o el número de versión actual. Explique qué hará el producto especificado en este SRS. No olvide señalar si este SRS describe solo una parte del sistema o un subsistema que será integrado en otro sistema. Proporcione una breve descripción del software que se especifica y su propósito, incluidos los beneficios, objetivos y metas relevantes. Relacione el software con los objetivos corporativos o las estrategias comerciales.
 
-### 1.3 Definitions, Acronyms and Abbreviations
+### 1.3 Definiciones, acrónimos y abreviaturas
 
-### 1.4 References
-List any other documents or Web addresses to which this SRS refers. These may include user interface style guides, contracts, standards, system requirements specifications, use case documents, or a vision and scope document. Provide enough information so that the reader could access a copy of each reference, including title, author, version number, date, and source or location.
+### 1.4 Referencias
+Enumere y enlace cualquier otro documento o dirección web a la que se refiera este SRS. Estos pueden incluir guías de estilo de la interfaz de usuario, contratos, estándares a seguir, especificaciones de requisitos del sistema, documentos de casos de uso o un documento de visión y alcance. Proporcione suficiente información para que el lector pueda acceder a una copia de cada referencia, incluido el título, autor, número de versión, fecha y fuente o ubicación.
 
-### 1.5 Document Overview
-Describe what the rest of the document contains and how it is organized.
+### 1.5 Resumen del documento
+Describa lo que contiene el resto del documento y cómo está organizado. Dependiendo del proyecto, algunas subsecciones de las secciones 2 y 3 serán eliminadas.
 
-## 2. Product Overview
-> This section should describe the general factors that affect the product and its requirements. This section does not state specific requirements. Instead, it provides a background for those requirements, which are defined in detail in Section 3, and makes them easier to understand.
+## 2. Vista general del producto
+Esta sección debe describir los factores generales que afectan el producto que se va a generar y sus requisitos de usuario o negocio. Esta sección no establece requisitos de sistema. En cambio, proporciona la base para entender estos requisitos de sistema, los cuales serán definidos en la sección 3.
 
-### 2.1 Product Perspective
-Describe the context and origin of the product being specified in this SRS. For example, state whether this product is a follow-on member of a product family, a replacement for certain existing systems, or a new, self-contained product. If the SRS defines a component of a larger system, relate the requirements of the larger system to the functionality of this software and identify interfaces between the two. A simple diagram that shows the major components of the overall system, subsystem interconnections, and external interfaces can be helpful.
+### 2.1 Perspectiva del producto
+Describa el contexto y el origen del producto que se especifica en este SRS. Por ejemplo, indique si este producto es continuación o extensión de una familia de productos, un reemplazo para ciertos sistemas existentes o un producto nuevo. Si el SRS define un componente de un sistema más grande, relacione los requisitos del sistema más grande con la funcionalidad de este software e identifique las interfaces entre los dos. Puede ser útil incluir un e simple que muestre los componentes principales del sistema general, las interconexiones del subsistema y las interfaces externas.
 
-### 2.2 Product Functions
-Summarize the major functions the product must perform or must let the user perform. Details will be provided in Section 3, so only a high level summary (such as a bullet list) is needed here. Organize the functions to make them understandable to any reader of the SRS. A picture of the major groups of related requirements and how they relate, such as a top level data flow diagram or object class diagram, is often effective.
+### 2.2 Funciones del producto
+Resuma las funciones principales que el producto debe realizar o debe permitir que el usuario realice. Los detalles se proporcionarán en la Sección 3, por lo que aquí solo se necesita un resumen de alto nivel (como una lista de los requisitos a nivel de usuario principales). Organice las funciones para que sean comprensibles para cualquier lector del SRS. Cómo extensión, un diagrama de casos de uso puede ayudar a entender esas funcionalidades.
 
-### 2.3 Product Constraints
-This subsection should provide a general description of any other items that will limit the developer’s options. These may include:  
+### 2.3 Restricciones del producto
+Esta subsección debe proporcionar una descripción general de cualquier otro elemento que limitará las opciones del desarrollador. Estos pueden incluir:
 
-* Interfaces to users, other applications or hardware.  
-* Quality of service constraints.  
-* Standards compliance.  
-* Constraints around design or implementation.
+* Interfaces para usuarios, otras aplicaciones a usar o limitaciones hardware.
+* Restricciones de calidad de servicio.
+* Cumplimiento de normas.
+* Restricciones en torno al diseño o implementación.
 
-### 2.4 User Characteristics
-Identify the various user classes that you anticipate will use this product. User classes may be differentiated based on frequency of use, subset of product functions used, technical expertise, security or privilege levels, educational level, or experience. Describe the pertinent characteristics of each user class. Certain requirements may pertain only to certain user classes. Distinguish the most important user classes for this product from those who are less important to satisfy.
+### 2.4 Perfiles de usuario
+Identifique los diversos perfiles de usuarios que usarán este producto. Los perfiles de usuario pueden diferenciarse según la frecuencia de uso, el subconjunto de funciones del producto utilizadas, la experiencia técnica, los niveles de seguridad o privilegio, el nivel educativo o la experiencia. Describa las características pertinentes de cada perfil de usuario. Ciertos requisitos pueden concernir solo a ciertos perfiles usuarios. Priorize los perfiles de usuarios de este producto para concer los requisitos que son más necesarios satisfacer.
 
-### 2.5 Assumptions and Dependencies
-List any assumed factors (as opposed to known facts) that could affect the requirements stated in the SRS. These could include third-party or commercial components that you plan to use, issues around the development or operating environment, or constraints. The project could be affected if these assumptions are incorrect, are not shared, or change. Also identify any dependencies the project has on external factors, such as software components that you intend to reuse from another project, unless they are already documented elsewhere (for example, in the vision and scope document or the project plan).
+Un actor en un caso de uso pertenecerá al menos a un perfil de usuario (podría englobar más). 
 
-### 2.6 Apportioning of Requirements
-Apportion the software requirements to software elements. For requirements that will require implementation over multiple software elements, or when allocation to a software element is initially undefined, this should be so stated. A cross reference table by function and software element should be used to summarize the apportioning.
+### 2.5 Suposiciones y dependencias
+Enumere todos los factores asumidos que podrían afectar los requisitos establecidos en el SRS. Estos podrían incluir componentes comerciales o de terceros que planea utilizar, problemas relacionados con el entorno operativo o de desarrollo, o restricciones. El proyecto podría verse afectado si estos supuestos son incorrectos, no se comparten o cambian. Identifique también cualquier dependencia que el proyecto tenga de factores externos, como los componentes de software que pretende reutilizar de otro proyecto, a menos que ya estén documentados en otro lugar (por ejemplo, en el plan del proyecto).
 
-Identify requirements that may be delayed until future versions of the system (e.g., blocks and/or increments).
+### 3 Interfaces externas
+Esta subsección define todos las interfazes de entrada y salida del sistema de software. Esta sección facilita la comprensión de los requisitos. Cada interfaz definida puede incluir el siguiente contenido:
+* Nombre del artículo
+* Fuente de entrada o destino de salida
+* Rango válido, precisión y / o tolerancia
+* Unidades de medida
+* Sincronización
+* Relaciones con otras entradas / salidas
+* Formatos de pantalla / organización
+* Formatos de ventana / organización
+* Formatos de datos
+* Formatos de comando
+* Fin de mensajes
 
-## 3. Requirements
-> This section specifies the software product's requirements. Specify all of the software requirements to a level of detail sufficient to enable designers to design a software system to satisfy those requirements, and to enable testers to test that the software system satisfies those requirements.
+#### 3.1 Interfaces con el usuario 
 
-> The specific requirements should:
-* Be uniquely identifiable.
-* State the subject of the requirement (e.g., system, software, etc.) and what shall be done.
-* Optionally state the conditions and constraints, if any.
-* Describe every input (stimulus) into the software system, every output (response) from the software system, and all functions performed by the software system in response to an input or in support of an output.
-* Be verifiable (e.g., the requirement realization can be proven to the customer's satisfaction)
-* Conform to agreed upon syntax, keywords, and terms.
+Defina los componentes de software para los que se necesita una interfaz de usuario. Describa las características de cada interfaz entre el producto de software y los usuarios. Esto puede incluir imágenes de pantalla de muestra, cualquier estándar de GUI o guías de estilo de familia de productos que se deben seguir, restricciones de diseño de pantalla, botones y funciones estándar (por ejemplo, ayuda) que aparecerán en cada pantalla, métodos abreviados de teclado, estándares de visualización de mensajes de error y pronto. 
 
-### 3.1 External Interfaces
-> This subsection defines all the inputs into and outputs requirements of the software system. Each interface defined may include the following content:
-* Name of item
-* Source of input or destination of output
-* Valid range, accuracy, and/or tolerance
-* Units of measure
-* Timing
-* Relationships to other inputs/outputs
-* Screen formats/organization
-* Window formats/organization
-* Data formats
-* Command formats
-* End messages
+#### 3.2 Interfaces con el Hardware
+Describa las características de cada interfaz entre el producto de software y los componentes de hardware del sistema. Esto puede incluir los tipos de dispositivos que deben ser compatibles, la naturaleza de los datos y las interacciones de control entre el software y el hardware, y los protocolos de comunicación que se utilizarán.
 
-#### 3.1.1 User interfaces
-Define the software components for which a user interface is needed. Describe the logical characteristics of each interface between the software product and the users. This may include sample screen images, any GUI standards or product family style guides that are to be followed, screen layout constraints, standard buttons and functions (e.g., help) that will appear on every screen, keyboard shortcuts, error message display standards, and so on. Details of the user interface design should be documented in a separate user interface specification.
+#### 3.3 Interfaces con el Software
+Describa las conexiones entre este producto y otros componentes de software específicos (nombre y versión), incluidas bases de datos, sistemas operativos, herramientas, bibliotecas y componentes comerciales integrados. Identifique los elementos de datos o mensajes que entran y salen del sistema y describa el propósito de cada uno. Describa los servicios necesarios y la naturaleza de las comunicaciones. Consulte los documentos que describen los protocolos detallados de la interfaz de programación de aplicaciones. Identifique los datos que se compartirán entre los componentes de software. Si el mecanismo de intercambio de datos debe implementarse de una manera específica (por ejemplo, memoria compartida, ficheros, en la nube, etc), especifique esto como una restricción de implementación.
 
-Could be further divided into Usability and Convenience requirements.
 
-#### 3.1.2 Hardware interfaces
-Describe the logical and physical characteristics of each interface between the software product and the hardware components of the system. This may include the supported device types, the nature of the data and control interactions between the software and the hardware, and communication protocols to be used.
+## 4. Requisitos
+Esta sección especifica los requisitos del producto a nivel de sistema y desglosa estos en diferentes categorías. El conjunto de requisitos se debe validar y estos deben ser:
+* Vigentes: Los requisitos reflejan las necesidades actuales de los usuarios del sistema, estos han podido cambiar con el tiempo, por tanto se debe revisar que sigen estando vigentes.
+* Consistentes: Los requisitos no deben tener conflicto entre ellos. De tenerlo se puede establecer prioridades (obligatorio, deseable o opcional sería una opción).
+* Completos: El conjunto de los requisitos define todas las funciones y restricciones deseadas por los stakeholders.
+* Viables: Los requisitos pueden ser implementados dentro del presupuesto y tiempo planeado.
+* Verificables: Los requisitos pueden ser comprobables (verificables) mediante tests.
 
-#### 3.1.3 Software interfaces
-Describe the connections between this product and other specific software components (name and version), including databases, operating systems, tools, libraries, and integrated commercial components. Identify the data items or messages coming into the system and going out and describe the purpose of each. Describe the services needed and the nature of communications. Refer to documents that describe detailed application programming interface protocols. Identify data that will be shared across software components. If the data sharing mechanism must be implemented in a specific way (for example, use of a global data area in a multitasking operating system), specify this as an implementation constraint.
+Para cada requisito se debería especificar, su ID, nombre del requisito, descripción del requisito, dependencias, prioridad y justificación de su espeficación (stakeholder, derivado de un caso de uso, una interfaz necesaria, etc). Un estilo formateado facilitará la lectura. Podéis usar el siguiente formato(dependiendo de la sección se añadiran más o menos almohadillas para ponerlo en su subsección correspondiente):
 
-### 3.2 Functional
-> This section specifies the requirements of functional effects that the software-to-be is to have on its environment.
+### ID - Nombre del requisito
+Descripción
+#### Dependencias 
+#### Priodidad
+#### Justificación
 
-### 3.3 Quality of Service
-> This section states additional, quality-related property requirements that the functional effects of the software should present.
+### 4.1 Precedencia y prioridad
+Esta sección está compuesta por una tabla que resumirá todos los requisitos especificados en las secciones siguientes. Se debe detallar un ID único, un nombre de requisito, su descripción, la prioridad de ese requisitos (es algo **Fundamental** a desarrollar; es **Deseable** tenerlo para que el cliente esté satisfecho; o es algo **Opcional** que estaría bien desarrollar si el tiempo lo permite), su precedencia (requisitos que deberán ser implementados antes) y el tipo (funcional o no funcional).
 
-#### 3.3.1 Performance
-If there are performance requirements for the product under various circumstances, state them here and explain their rationale, to help the developers understand the intent and make suitable design choices. Specify the timing relationships for real time systems. Make such requirements as specific as possible. You may need to state performance requirements for individual functional requirements or features.
+Esta tabla se generará en paralelo a las secciones correspondientes, y se completará cuando todas las secciones estén terminadas. Os recomiendo hacerla en excel e importarla en https://www.tablesgenerator.com/markdown_tables para generar la tabla en formato Markdown. Meter retornos de carro para que no se alarge mucho la tabla y usad la opción *_line break as <br>_* para que esos retornos de carro sean efectivos al copiarlos.
 
-#### 3.3.2 Security
-Specify any requirements regarding security or privacy issues surrounding use of the product or protection of the data used or created by the product. Define any user identity authentication requirements. Refer to any external policies or regulations containing security issues that affect the product. Define any security or privacy certifications that must be satisfied.
 
-#### 3.3.3 Reliability
-Specify the factors required to establish the required reliability of the software system at time of delivery.
+| Id 	| Nombre 	| Descripción 	| Priodidad 	| Precedencia 	| Tipo 	|
+|:--:	|:----------------------------:	|:----------------------------------------------------------------------------------------------------------------------------------------------------------------:	|:-------------------:	|:-----------:	|-----------	|
+| R3 	| Datos de clientes 	| El sistema deberá registar los datos de los clientes<br>para su posterior tratamiento. Estos incluirán su <br>nombre, DNI, fecha de nacimiento, género y e-mail. 	| <br>Fundamental<br> 	|  	| Funcional 	|
+| R4 	| Modificar datos <br>clientes 	| El sistema permitirá modificar el e-mail del cliente. 	| Fundamental 	| R3 	| Funcional 	|
+|  	|  	|  	|  	|  	|  	|
+	
 
-#### 3.3.4 Availability
-Specify the factors required to guarantee a defined availability level for the entire system such as checkpoint, recovery, and restart.
 
-### 3.4 Compliance
-Specify the requirements derived from existing standards or regulations, including:  
-* Report format
-* Data naming
-* Accounting procedures
-* Audit tracing
+### 4.2 Funcionales
+Esta sección especifica los requisitos funcionales de sistema que el futuro software debe tener en su entorno. Se aconseja poner un enlace al documento de casos de uso generado por magic draw para que el lector tenga una vista general de las funcionalidades del producto a generar.
 
-For example, this could specify the requirement for software to trace processing activity. Such traces are needed for some applications to meet minimum regulatory or financial standards. An audit trace requirement may, for example, state that all changes to a payroll database shall be recorded in a trace file with before and after values.
 
-### 3.5 Design and Implementation
 
-#### 3.5.1 Installation
-Constraints to ensure that the software-to-be will run smoothly on the target implementation platform.
+### 4.3 Calidad de Servicio
+Esta sección establece requisitos no funcionales relacionados con la calidad que deben presentar las funcionales del software.
+ 
+#### 4.3.1 Rendimiento
+Si existen requisitos no funcionales de rendimiento para el producto en varias circunstancias, indíquelos aquí y explique sus razones, para ayudar a los desarrolladores a comprender la intención y tomar las decisiones de diseño adecuadas. Especifique las restricciones de tiempo. Haga tales requisitos tan específicos como sea posible. Es posible que deba indicar los requisitos de rendimiento para requisitos funcionales o características individuales.
 
-#### 3.5.2 Distribution
-Constraints on software components to fit the geographically distributed structure of the host organization, the distribution of data to be processed, or the distribution of devices to be controlled.
+#### 4.3.2 Seguridad
+Especifique los requisitos no funcionales relacionados con los problemas de seguridad o privacidad relacionados con el uso del producto. 
+* Protección de los datos utilizados o creados por el producto.
+* Requisitos de autenticación de identidad de usuario. 
+* Políticas o regulaciones externas que contengan problemas de seguridad que afecten al producto. 
+* Certificaciones de seguridad o privacidad que deben cumplirse.
 
-#### 3.5.3 Maintainability
-Specify attributes of software that relate to the ease of maintenance of the software itself. These may include requirements for certain modularity, interfaces, or complexity limitation. Requirements should not be placed here just because they are thought to be good design practices.
+#### 4.3.3 Fiabilidad
+Especifique los requisitos no funcionales necesarios para establecer la fiabilidad requerida del sistema de software al momento de la entrega.
 
-#### 3.5.4 Reusability
-<!-- TODO: come up with a description -->
+#### 4.3.4 Disponibilidad
+Especifique los requisitos no funcionales necesarios para garantizar un nivel de disponibilidad definido para todo el sistema, tiempo mínimo disponible por día, máximos de reinicios permitidos por tiempo, etc.
 
-#### 3.5.5 Portability
-Specify attributes of software that relate to the ease of porting the software to other host machines and/or operating systems.
+### 4.4 Normativas aplicables
+Especifique los requisitos no funcionales derivados de las normas o regulaciones existentes, que incluyen:
+* Formato de informe
+* Nombre de datos
+* Procedimientos contables
+* Seguimiento de auditoría
 
-#### 3.5.6 Cost
-Specify monetary cost of the software product.
+### 4.5 Diseño e implementación
 
-#### 3.5.7 Deadline
-Specify schedule for delivery of the software product.
+#### 4.5.1 Instalación
+Restricciones para garantizar que el futuro software se ejecutará sin problemas en la plataforma de implementación de destino.
 
-#### 3.5.8 Proof of Concept
-<!-- TODO: come up with a description -->
+#### 4.5.2 Distribución
+Restricciones en los componentes de software para adaptarse a la estructura distribuida geográficamente de la organización en la que se va a instalar el software, la distribución de datos a procesar o la distribución de dispositivos a controlar.
 
-## 4. Verification
-> This section provides the verification approaches and methods planned to qualify the software. The information items for verification are recommended to be given in a parallel manner with the requirement items in Section 3. The purpose of the verification process is to provide objective evidence that a system or system element fulfills its specified requirements and characteristics.
+#### 4.5.3 Mantenimiento
+Especifique los atributos del software que se relacionan con la facilidad de mantenimiento del software en sí. Estos pueden incluir requisitos para cierta modularidad, interfaces o limitación de complejidad. Los requisitos no se deben colocar aquí solo porque son buenas prácticas de diseño.
 
-<!-- TODO: give more guidance, similar to section 3 -->
-<!-- ieee 15288:2015 -->
+#### 4.5.4 Reusabilidad
+Software externo que deberá usarse.
 
-## 5. Appendixes
+#### 4.5.5 Portabilidad
+Especifique los atributos del software que se relacionan con la facilidad de portar el software a otras máquinas host y / o sistemas operativos.
+
+#### 4.5.6 Coste
+Especifique las limitaciones en el costo del producto de software.
+
+#### 4.5.7 Fecha de entrega
+Especifique, si tiene, fecha de entrega del producto.
+
+## 5. Verificación
+Esta sección proporciona los enfoques y métodos de verificación planeados para calificar el software. Se recomienda que los elementos de información para verificación se proporcionen de manera paralela con los elementos de requisitos en la Sección 4. El propósito del proceso de verificación es proporcionar evidencia objetiva de que un sistema o elemento del sistema cumple con los requisitos y características especificados.
+
+
+## 6. Apendices
+### Apéndice A: Ejemplos de este documento relleno
+Incluir y referenciar en el documento tantos apéndices como sea necesario. Los siguientes, son ejemplo de este documento (con algunas modificaciones), relleno:
+
+[Ejemplo relleno en inglés 1](https://arxiv.org/pdf/1005.0330.pdf)
+[Ejemplo relleno en inglés 2](http://www.cse.chalmers.se/~feldt/courses/reqeng/examples/srs_example_2010_group2.pdf)
