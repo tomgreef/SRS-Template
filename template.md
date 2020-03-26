@@ -213,3 +213,6 @@ Incluir y referenciar en el documento tantos apéndices como sea necesario. Los 
 
 [Ejemplo relleno en inglés 1](https://arxiv.org/pdf/1005.0330.pdf)
 [Ejemplo relleno en inglés 2](http://www.cse.chalmers.se/~feldt/courses/reqeng/examples/srs_example_2010_group2.pdf)
+
+### Apéndice B: Generar PDF usando un fichero MD
+Hay multitud de herramientas online y offline, por ejemplo: https://www.markdowntopdf.com/
