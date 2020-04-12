@@ -1,10 +1,10 @@
 # Especificación de requisitos 
-## Del proyecto <project name>
+## Del proyecto Clean-Up
 
 Versión 0.1  
-Generada por <author>  
-<organización>  
-<fecha creación>  
+Generada por Tom van Greevenbroek 
+Estudiante de la Universidad de Málaga (UMA)
+11/04/2020 
 
 Índice
 =================
@@ -46,71 +46,101 @@ Generada por <author>
 * 6 [Apendices](#6-apendices) 
   
 ## Versiones
-| Name | Date    | Reason For Changes  | Version   |
-| ---- | ------- | ------------------- | --------- |
-|      |         |                     |           |
-|      |         |                     |           |
-|      |         |                     |           |
+| Nombre              | Date       | Motivos para el cambio                                 | Versión |
+| ------------------- | ---------- | ------------------------------------------------------ | ------- |
+|Tom van Greevenbroek | 11/04/2020 | Primera propuesta para la especificación de requisitos | 0.1     |
 
 ## 1. Introducción
-Esta sección debe proporcionar una visión general de todo el documento.
+Este documento contiene todos los requisitos de software que especifican el producto, incluyendo las distintas versiones, que nos servirá para satisfacer todas las necesidad de nuestro **cliente** *Joaquín Ballesteros*.
 
 ### 1.1 Objetivo del documento
-Describa el propósito del SRS y su público objetivo.
+El propósito de este documento es **mostrar de una forma clara las características o especificaciones** con que cuenta este software.
 
 ### 1.2 Ámbito del proyecto
-Identifique el producto cuyos requisitos de software se especifican en este documento, incluida la revisión o el número de versión actual. Explique qué hará el producto especificado en este SRS. No olvide señalar si este SRS describe solo una parte del sistema o un subsistema que será integrado en otro sistema. Proporcione una breve descripción del software que se especifica y su propósito, incluidos los beneficios, objetivos y metas relevantes. Relacione el software con los objetivos corporativos o las estrategias comerciales.
+El proyecto trata sobre una plataforma en la que los ciudadanos residentes de un área en concreto podrán publicar desperfectos ubicados en la vía pública, con la intención de que los responsables, en este caso, el Ayuntamiento, los arregle.
+
+Este documento especificará por completo al sistema, ya que el software constará como intermediario entre los usuarios afectados por su zona y los agentes destinados a resolver esas incidencias, permitiendo al ayuntamiento y ciudadanos estar informado sobre todo lo que ocurre en su zona, y permitirá el arreglo de cualquier incidencia si fuese posible por parte del ayuntamiento.
+
+Finalmente, este software podrá ser re-usado por empresas o residencias privadas para estar informado sobre sus zonas y poder mejorarlas. Se pagaría, en forma de suscripción, por cada agente que usaría el software.
 
 ### 1.3 Definiciones, acrónimos y abreviaturas
+* Usuario - Serán los ciudadanos que usarán el software para comunicar desperfectos.
+* Agente - Serán funcionarios del ayuntamiento que resolverán incidencias generadas por usuarios en un provincia de España.
+* Subscripción - Pago por mensualidad, a través de adeudos por domiciliación.
+* Interfaces - Es posible entenderlo como una superficie con el objeto de aportar información a través de su textura, forma o color. Más sobre esto en la sección de referencias.
+* RF - Requisitos Funcionales
+* RNF - Requisitos No Funcionales
 
 ### 1.4 Referencias
-Enumere y enlace cualquier otro documento o dirección web a la que se refiera este SRS. Estos pueden incluir guías de estilo de la interfaz de usuario, contratos, estándares a seguir, especificaciones de requisitos del sistema, documentos de casos de uso o un documento de visión y alcance. Proporcione suficiente información para que el lector pueda acceder a una copia de cada referencia, incluido el título, autor, número de versión, fecha y fuente o ubicación.
+Propuesta de proyecto
+    : Clean-Up, 10/04/2020 [Documentación GitHub](https://github.com/tomgreef/clean-up/tree/master/Documentacion)
+
+Guías de estilo de interfaz
+    : 10/04/2020 [Balsamiq Website](https://balsamiq.com/wireframes/)
+
+Planificación - V1
+    : Clean-Up, 10/04/2020 [Documentación GitHub](https://github.com/tomgreef/clean-up/tree/master/Documentacion)
+
+Interfaz
+    : 10/04/2020 [Definición de un Interfaz](https://definicion.de/interfaz/)
+
+
+**//Enumere y enlace cualquier otro documento o dirección web a la que se refiera este SRS. Estos pueden incluir guías de estilo de la interfaz de usuario, contratos, estándares a seguir, especificaciones de requisitos del sistema, documentos de casos de uso o un documento de visión y alcance. Proporcione suficiente información para que el lector pueda acceder a una copia de cada referencia, incluido el título, autor, número de versión, fecha y fuente o ubicación.**
 
 ### 1.5 Resumen del documento
-Describa lo que contiene el resto del documento y cómo está organizado. Dependiendo del proyecto, algunas subsecciones de las secciones 2 y 3 serán eliminadas.
+Este documento contiene, como complemento a lo anterior, una vista general del producto donde se especifica varios aspectos del producto, al igual que se habrá una sección que trata sobre los interfaces dirigidos a las distintas entidades que usarán este software. Así mismo, tambien contendrá contenido sobre la verificación de todo lo mencionado es este documento.
 
 ## 2. Vista general del producto
-Esta sección debe describir los factores generales que afectan el producto que se va a generar y sus requisitos de usuario o negocio. Esta sección no establece requisitos de sistema. En cambio, proporciona la base para entender estos requisitos de sistema, los cuales serán definidos en la sección 3.
 
 ### 2.1 Perspectiva del producto
-Describa el contexto y el origen del producto que se especifica en este SRS. Por ejemplo, indique si este producto es continuación o extensión de una familia de productos, un reemplazo para ciertos sistemas existentes o un producto nuevo. Si el SRS define un componente de un sistema más grande, relacione los requisitos del sistema más grande con la funcionalidad de este software e identifique las interfaces entre los dos. Puede ser útil incluir un diagrama de bloques simple que muestre los componentes principales del sistema general, las interconexiones del subsistema y las interfaces externas.
+El sistema será creado desde cero y consistirá en dos partes: una dirreccionado a los usuarios y otra a los agentes. Ambos accederán a la misma base de datos, aunque tendrían interfaces distintos. 
+
+![example image](https://d2slcw3kip6qmk.cloudfront.net/marketing/pages/chart/uml/deployment-diagram/deployment-diagram-example-700x412.jpeg)
+*Gratis Omah - [Deployment Diagram Tutorial Lucidchart](https://gratisomah.blogspot.com/2018/08/contoh-hardware-server.html)*
 
 ### 2.2 Funciones del producto
-Resuma las funciones principales que el producto debe realizar o debe permitir que el usuario realice. Los detalles se proporcionarán en la Sección 3, por lo que aquí solo se necesita un resumen de alto nivel (como una lista de los requisitos a nivel de usuario principales). Organice las funciones para que sean comprensibles para cualquier lector del SRS. Cómo extensión, un diagrama de casos de uso puede ayudar a entender esas funcionalidades.
+Los usuarios podrán publicar incidencias a través de la plataforma web de manera rápida, siempre y cuando tengan una cuenta registrada con nosotros. Una vez publicada, esa incidencia podría ser editada o borrada.
+
+Si la incidencia ya existiese, se le preguntará al usuario de verificar si fuese el mismo o no. En caso que lo fuese, su incidencia se subirá a la plataforma en forma de sub-incidencia, por lo que tendría una relación con la incidencia principal (o primera).
+
+Un agente podrá trabajar con esas incidencias que llegan a su portal, permitiendoles responder a los usuarios para pedir más información o para indicar que esta arreglado, por lo que la incidencia cambiaría a otro estado (cerrado). Una vez cerrado, todas las sub-incidencias de esa incidencia principal serán cerrados también, notificando a todos los usuarios que crearon esas incidencias.
+
+Los agentes también pueden ver en una representación geográfica todas las incidencias, permitiendoles saber que áreas están más afectados. 
 
 ### 2.3 Restricciones del producto
-Esta subsección debe proporcionar una descripción general de cualquier otro elemento que limitará las opciones del desarrollador. Estos pueden incluir:
+Cada incidencia permitirá adjuntar un total de 3 imágenes, con una descripción y título limitado por un número limitado de carácteres.
 
-* Interfaces para usuarios, otras aplicaciones a usar o limitaciones hardware.
-* Restricciones de calidad de servicio.
-* Cumplimiento de normas.
-* Restricciones en torno al diseño o implementación.
+También se cumplimentará con las leyes sobre la protección de datos establecidos por [La Agencia Española de Protección de Datos](https://www.aepd.es/es).
+
+Finalmente, los agentes debería poder trabajar de forma limitada, hasta sin conección de internet. Ya que podrían haber situaciones en la que no hubiese una coneccion a internet.
 
 ### 2.4 Perfiles de usuario
-Identifique los diversos perfiles de usuarios que usarán este producto. Los perfiles de usuario pueden diferenciarse según la frecuencia de uso, el subconjunto de funciones del producto utilizadas, la experiencia técnica, los niveles de seguridad o privilegio, el nivel educativo o la experiencia. Describa las características pertinentes de cada perfil de usuario. Ciertos requisitos pueden concernir solo a ciertos perfiles usuarios. Priorize los perfiles de usuarios de este producto para concer los requisitos que son más necesarios satisfacer.
+Los perfiles de usuarios serán aquellos ciudadanos que se preocupan por sus entornos, ya que la única forma en la que se pueda arreglar algo en la vía pública es a través del ayuntamiento.
 
-Un actor en un caso de uso pertenecerá al menos a un perfil de usuario (podría englobar más). 
+El uso del software también se podrá ver afectado por la experiencia técnica de cada usuario y su nivel educativo.
+
+Por lo tanto, podríamos concluir que solo tendríamos **un solo perfil de usuario** que es aquella que se preocupa por su entorno y sea mayor de edad.
 
 ### 2.5 Suposiciones y dependencias
-Enumere todos los factores asumidos que podrían afectar los requisitos establecidos en el SRS. Estos podrían incluir componentes comerciales o de terceros que planea utilizar, problemas relacionados con el entorno operativo o de desarrollo, o restricciones. El proyecto podría verse afectado si estos supuestos son incorrectos, no se comparten o cambian. Identifique también cualquier dependencia que el proyecto tenga de factores externos, como los componentes de software que pretende reutilizar de otro proyecto, a menos que ya estén documentados en otro lugar (por ejemplo, en el plan del proyecto).
+Algunos de los factores asumidos que podría afectar los requisitos establecidos en este documento, son las tecnologías que usaremos. Ya que, podrían cambiar su forma de uso o cambiarlo a una tecnología por la cual se tendría que pagar.
+
+Estas tecnologías son: [Firebase de Google](https://firebase.google.com/) y [Bulma](https://bulma.io/); usados para la base y el desarrollo, respectivamente, de nuestro software.
 
 ### 3 Interfaces externas
-Esta subsección define todos las interfazes de entrada y salida del sistema de software. Esta sección facilita la comprensión de los requisitos. Cada interfaz definida puede incluir el siguiente contenido:
-* Nombre del artículo
-* Fuente de entrada o destino de salida
-* Rango válido, precisión y / o tolerancia
-* Unidades de medida
-* Sincronización
-* Relaciones con otras entradas / salidas
-* Formatos de pantalla / organización
-* Formatos de ventana / organización
-* Formatos de datos
-* Formatos de comando
-* Fin de mensajes
+Esta subsección define todos las interfaces de entrada y salida del sistema de software. Esta sección facilita la comprensión de los requisitos.
 
 #### 3.1 Interfaces con el usuario 
+Todos usuarios serán presentados con la página de incidencias, que sería equivalente al de inicio, al entrar en la plataforma web. Si el usuario no ha inicado sesión, se le presentará la opción de iniciar sesión como viene a continuación.
 
-Defina los componentes de software para los que se necesita una interfaz de usuario. Describa las características de cada interfaz entre el producto de software y los usuarios. Esto puede incluir imágenes de pantalla de muestra, cualquier estándar de GUI o guías de estilo de familia de productos que se deben seguir, restricciones de diseño de pantalla, botones y funciones estándar (por ejemplo, ayuda) que aparecerán en cada pantalla, métodos abreviados de teclado, estándares de visualización de mensajes de error y pronto. 
+![Login.png](https://www.dropbox.com/s/5iqinnsqjbjbv2m/Login.png?dl=0&raw=1)
+
+Una vez haya iniciado sesión tendrá la opción de crear nuevas incidencias o editar/ver las que ya tenga creadas, y además podrá ver lo que sucede por lo demás en su alrededor. A continuación un ejemplo de una incidencia creada por un usuario:
+
+![Incidencia.png](https://www.dropbox.com/s/0p698v8fhickxum/Incidencia.png?dl=0&raw=1)
+
+Finalmente, los agentes accederán de la misma forma a la plataforma, pero tendrán un interfaz más ampliado respecto a los usuarios, ya que van tener la posibilidad de administrar todas las incidencias, y verlas en una mapa con detalles.
+
+![Agente.png](https://www.dropbox.com/s/lyzt5r3bh2roel4/Agente.png?dl=0&raw=1)
 
 #### 3.2 Interfaces con el Hardware
 Describa las características de cada interfaz entre el producto de software y los componentes de hardware del sistema. Esto puede incluir los tipos de dispositivos que deben ser compatibles, la naturaleza de los datos y las interacciones de control entre el software y el hardware, y los protocolos de comunicación que se utilizarán.
