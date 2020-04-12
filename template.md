@@ -68,8 +68,10 @@ Finalmente, este software podrá ser re-usado por empresas o residencias privada
 * Agente - Serán funcionarios del ayuntamiento que resolverán incidencias generadas por usuarios en un provincia de España.
 * Subscripción - Pago por mensualidad, a través de adeudos por domiciliación.
 * Interfaces - Es posible entenderlo como una superficie con el objeto de aportar información a través de su textura, forma o color. Más sobre esto en la sección de referencias.
+* Cliente - Es el ayuntamiento en este caso, pero podría extenderse a cualquiera persona o empresa que quisiese adquirir nuestro sistema.
 * RF - Requisitos Funcionales
 * RNF - Requisitos No Funcionales
+
 
 ### 1.4 Referencias
 Propuesta de proyecto
@@ -143,27 +145,207 @@ Finalmente, los agentes accederán de la misma forma a la plataforma, pero tendr
 ![Agente.png](https://www.dropbox.com/s/lyzt5r3bh2roel4/Agente.png?dl=0&raw=1)
 
 #### 3.2 Interfaces con el Hardware
-Describa las características de cada interfaz entre el producto de software y los componentes de hardware del sistema. Esto puede incluir los tipos de dispositivos que deben ser compatibles, la naturaleza de los datos y las interacciones de control entre el software y el hardware, y los protocolos de comunicación que se utilizarán.
+Dado que la página web no tienen ningún hardware designado, no tiene cualquier interfaz de hardware directa. El GPS físico es administrado por la aplicación GPS en el teléfono móvil usado sólo al crear incidencias, y la conexión de hardware al servidor de la base de datos es administrada por el sistema operativo subyacente en el teléfono móvil y el servidor web.
+
+Por lo tanto, cualquier smartphone que soporte GPS debe ser compatible con las funcionalidades de nuestro sistema. Los datos obtenidos de la GPS serán coordenadas que se usarían para poder localizar la incidencia creada.
 
 #### 3.3 Interfaces con el Software
-Describa las conexiones entre este producto y otros componentes de software específicos (nombre y versión), incluidas bases de datos, sistemas operativos, herramientas, bibliotecas y componentes comerciales integrados. Identifique los elementos de datos o mensajes que entran y salen del sistema y describa el propósito de cada uno. Describa los servicios necesarios y la naturaleza de las comunicaciones. Consulte los documentos que describen los protocolos detallados de la interfaz de programación de aplicaciones. Identifique los datos que se compartirán entre los componentes de software. Si el mecanismo de intercambio de datos debe implementarse de una manera específica (por ejemplo, memoria compartida, ficheros, en la nube, etc), especifique esto como una restricción de implementación.
-
+La plataforma se comunica con el GPS del smartphone para obtener información geográfica sobre dónde se encuentra el usuario a la hora de crear una incidencia. La comunicación entre la base de datos y el portal web consiste en operaciones relacionadas tanto con la lectura como con la modificación de los datos.
 
 ## 4. Requisitos
-Esta sección especifica los requisitos del producto a nivel de sistema y desglosa estos en diferentes categorías. El conjunto de requisitos se debe validar y estos deben ser:
-* Vigentes: Los requisitos reflejan las necesidades actuales de los usuarios del sistema, estos han podido cambiar con el tiempo, por tanto se debe revisar que sigen estando vigentes.
-* Consistentes: Los requisitos no deben tener conflicto entre ellos. De tenerlo se puede establecer prioridades (obligatorio, deseable o opcional sería una opción).
-* Completos: El conjunto de los requisitos define todas las funciones y restricciones deseadas por los stakeholders.
-* Viables: Los requisitos pueden ser implementados dentro del presupuesto y tiempo planeado.
-* Verificables: Los requisitos pueden ser comprobables (verificables) mediante tests.
-
-Para cada requisito se debería especificar, su ID, nombre del requisito, descripción del requisito, dependencias, prioridad y justificación de su espeficación (stakeholder, derivado de un caso de uso, una interfaz necesaria, etc). Un estilo formateado facilitará la lectura. Podéis usar el siguiente formato(dependiendo de la sección se añadiran más o menos almohadillas para ponerlo en su subsección correspondiente):
+Esta sección especifica los requisitos del producto a nivel de sistema y desglosa estos en diferentes categorías. Para cada requisito usamos el siguiente formato:
 
 ### ID - Nombre del requisito
 Descripción
-#### Dependencias 
-#### Priodidad
-#### Justificación
+##### Dependencias 
+##### Prioridad
+###
+###
+***
+***
+###
+
+### R1 - Tener una conexión al internet
+Para el uso de la plataforma web, es necesario tener una conexión con el internet estable. En caso de no tenerla, se producirá un error indicando que no está conectado el internet, normalmente generado por el navegador web.
+##### Ninguna
+##### Fundamental
+###
+***
+
+### R2 - Tener la aplicación escritorio
+Los agentes podrán tener instalado la aplicación de escritorio para agentes en su PC, accesible desde la plataforma web. Deben tener un Sistema Operativo (OS) de Windows 10 Home o Pro. Además, la aplicación de escritorio tiene un caché para poder seguir resolviendo un número limitado de incidencias sin tener una conexión a internet.
+##### R3
+##### Fundamental
+###
+***
+
+### R3 - Crear una cuenta Agente
+Los agentes designados por el cliente podrán crear una cuenta poniéndose en contacto con el equipo de administradores. Estos tendrán que verificarlo con el cliente y después podrán ser cambiados a tipo Agente. El agente deberá aceptar las normas establecidas por Clean-Up sobre la ley de la protección de datos.
+##### R1
+##### Fundamental
+###
+***
+
+### R4 - Crear una cuenta Usuario
+Cualquier persona podrá crear una cuenta de tipo Usuario desde la plataforma web para poder crear incidencias. El usuario deberá aceptar las normas establecidas por Clean-Up sobre la ley de la protección de datos. Finalmente, los usuarios deben de verificar su teléfono móvil a través de un SMS para completar el proceso, y una vez completado, se deberá verificar el correo electrónico.
+##### R1
+##### Fundamental
+###
+***
+
+### R5 - Iniciar Sessión
+Cualquier persona registrado podrá iniciar sessión en el sistema siempre y cuando tenga una conexión con el internet. La sessión se mantendrá iniciada por un máximo de 1 hora después de que comience la inactividad.
+##### R3 - R4
+##### Fundamental
+###
+***
+
+### R6 - Crear incidencias
+El usuario y agente pueden crear incidencias con imágenes, título, descripción y coordenadas para ser resueltos por los agentes del cliente. El número máximo de imágenes que se pueden subir son 3 de formato .PNG y .JPG. Los textos estarán limitados a un número máximo de 300 caracteres. Las coordenadas se obtienen desde el GPS del móvil, pero si se solicita la incidencia desde otro lugar, entonces el sistema permitirá el uso de coordenadas. El sistema reconocerá si la incidencia ya existe en el base datos, por lo que pedirá al creador si es la misma. En caso afirmativo, se añadirá esa incidencia como sub-incidencia de la que estaba en la base de datos anteriormente. En caso contrario, se creará una nueva incidencia.
+##### R5
+##### Fundamental
+###
+***
+
+### R7 - Información al Usuario
+Se debe presentar al usuario toda información necesaria, tanto legal como el funcionamiento del mismo en la parte inferior de la plataforma.
+##### Ninguna 
+##### Deseable
+###
+***
+
+### R8 - Editar/Eliminar una incidencia
+Los agentes y usuarios podrán editar/eliminar las incidencias. Los usuarios sólo podrán modificar aquellos de los que sean propietarios, mientras que los agentes pueden cambiar cualquier incidencia. La opción de eliminar una incidencia se mostrará a través de un botón que hará que el sistema pida por una confirmación del usuario.
+##### R5 
+##### Fundamental
+###
+***
+
+### R9 - Fusionar incidencias
+Los agentes tendrán la posibilidad de fusionar una o varias incidencias, seleccionándolas y eligiendo la opción de fusionar. Esto permitirá al agente seleccionar una incidencia como principal y vincular los demás como un sub-incidencia de la principal seleccionado.
+##### R10 
+##### Deseable
+###
+***
+
+### R10 - Seleccionar incidencias
+Los agentes deberán poder seleccionar varias incidencias a la vez para poder gestionarlas simultáneamente.
+##### R5 
+##### Deseable
+###
+***
+
+### R11 - Responder a incidencias
+Tanto los usuarios como los agentes podrán comentar en la sección de comentarios de una incidencia. Tras cada respuesta, se notificará al agente o al usuario, dependiendo de quién comentó. Es decir, si el agente escribiera un comentario en una incidencia creado por un usuario, este usuario recibirá una notificación. Los comentarios serán limitados por un máximo de 300 caracteres.
+##### R6 
+##### Fundamental
+###
+***
+
+### R12 - Recibir notificaciones
+Los agentes y usuarios deberán recibir notificaciones con cualquier cambio que se haya generado a una incidencia de la cual es propietario o asignado. Estas notificaciones podrán ser cambiado en los ajustes de perfil.
+##### R14 - R6
+##### Deseable
+###
+***
+
+### R13 - Asignación de incidencias
+En el caso de haber múltiples agentes, se podrán asignar las incidencias a un agente. De esta forma, las notificaciones de incidencias asignados al agente llegarán solamente a este agente.
+##### R6 
+##### Deseable
+###
+***
+
+### R14 - Ajustes de perfil
+Los agentes y usuarios podrán ajustar su perfil en la sección de Ajustes. Aquí podrán cambiar sus datos, eliminar la cuenta, y cambiar la preferencia de notificaciones.
+##### R5 
+##### Fundamental
+###
+***
+
+### R15 - Restablecer contraseña
+Los usuarios y agentes podrán restablecer su contraseña en la pantalla para iniciar sessión y en los ajustes de perfil.
+##### R5 - R14 
+##### Fundamental
+###
+***
+
+### R16 - Estado de incidencias
+Los agentes podrán cambiar el estado de las incidencias de tal forma que solo trabajarían con aquellas incidencias que estén en estado "abierta". Y los finalizados estarían en estado "Cerrado".
+##### R6 
+##### Opcional
+###
+***
+
+### R17 - Lista de incidencias creados/asignados
+Los usuarios y agentes tendrán una pestaña donde podrán ver todas las incidencias que hayan creado/sido asignado. Esta lista enseñará un máximo de 10 incidencias por página.
+##### R6 
+##### Opcional
+###
+***
+
+### R18 - Página de inicio
+La página principal de la plataforma web para los usuarios será una lista de incidencias que se ubican en su código postal, mientras que para los agentes será una lista de todas las incidencias que quedan por resolver.
+##### R16 - R6 
+##### Fundamental
+###
+***
+
+### R19 - Mapa con incidencias
+Los agentes tendrán acceso a un mapa con todos las incidencias señalizados por ubicación, permitiendo el acceso a cualquier incidencia desde ese mapa.
+##### R6 
+##### Deseable
+###
+***
+
+### R20 - Estadísticas
+Los agentes podrán ver en una pestaña de estadísticas donde se verán los tiempos de respuestas y el tiempo en la que se tarda para resolver una incidencia.
+##### Ninguna 
+##### Opcional
+###
+***
+
+### R21 - Archivar Incidencias
+Las incidencias deberán ser archivados después de estar más de dos años en estado cerrado. Se archivarán a una localización especificado por el cliente o agentes.
+##### R6 
+##### Opcional
+###
+***
+
+### ID - Nombre del requisito
+Descripción
+##### Dependencias 
+##### Prioridad
+###
+***
+
+### ID - Nombre del requisito
+Descripción
+##### Dependencias 
+##### Prioridad
+###
+***
+
+### ID - Nombre del requisito
+Descripción
+##### Dependencias 
+##### Prioridad
+###
+***
+
+### ID - Nombre del requisito
+Descripción
+##### Dependencias 
+##### Prioridad
+###
+***
+
+### ID - Nombre del requisito
+Descripción
+##### Dependencias 
+##### Prioridad
+###
+***
 
 ### 4.1 Precedencia y prioridad
 Esta sección está compuesta por una tabla que resumirá todos los requisitos especificados en las secciones siguientes. Se debe detallar un ID único, un nombre de requisito, su descripción, la prioridad de ese requisitos (es algo **Fundamental** a desarrollar; es **Deseable** tenerlo para que el cliente esté satisfecho; o es algo **Opcional** que estaría bien desarrollar si el tiempo lo permite), su precedencia (requisitos que deberán ser implementados antes) y el tipo (funcional o no funcional).
