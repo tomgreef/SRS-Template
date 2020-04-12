@@ -209,7 +209,7 @@ Cualquier persona podrá crear una cuenta de tipo Usuario desde la plataforma we
 
 ### R4.1 - GDPR
 Los usuarios y agentes deberán aceptar las normas establecidas por Clean-Up sobre la ley de la protección de datos.
-#### R1
+#### R1 - R22
 #### Fundamental
 ###
 ***
@@ -382,7 +382,7 @@ Las incidencias deberán ser archivados después de estar más de dos años en e
 ###
 ***
 
-### R22 - Seguridad
+### R22 - Certificación SSL
 Para cumplir con las normas de GDPR, se usarán certificaciones SSL.
 #### Ninguna 
 #### Fundamental
@@ -394,107 +394,105 @@ En cualquier proceso de rellenar datos como es la creación de una cuenta o una 
 #### R3 - R4 - R6 
 #### Deseable
 ###
+###
+***
+***
+###
 
 ### 4.1 Precedencia y prioridad
 
-| **Id**    | **Nombre**                                            | **Descripción**                                                                                                                            | **Priodidad**   | **Precedencia** | **Tipo**         |
-|-------|---------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------|-------------|-------------|--------------|
-| R1    | Conexión de internet                              | Deberán tener una conexión estable con el internet                                                                                     | Fundamental |             | Funcional    |
-| R1.1  | Navegador web                                     | Es necesario que el navegador web soporte HTML5, <br>geolocalización y subida de imágenes                                              | Fundamental |             | No Funcional |
-| R2    | Aplicación de <br>escritorio                      | Los agentes necesitan poder instalar la aplicación <br>en su PC                                                                        | Fundamental | R3          | Funcional    |
-| R2.1  | Sistema Operativo                                 | Deben tener un sistema operativo de Windows 10 Home <br>o Pro                                                                          | Fundamental | R3          | No Funcional |
-| R3    | Crear una cuenta <br>Agente                       | Los agentes designados por el cliente podrán crear <br>una cuenta poniéndose en contacto con el equipo de <br>administradores          | Fundamental | R1          | Funcional    |
-| R4    | Crear una cuenta <br>Usuario                      | Cualquier persona podrá crear una cuenta de tipo <br>Usuario desde la plataforma web                                                   | Fundamental | R1          | Funcional    |
-| R4.1  | GDPR                                              | Los usuarios y agentes deberán aceptar las normas <br>establecidas por Clean-Up sobre la ley de la <br>protección de datos             | Fundamental | R1          | No Funcional |
-| R4.2  | Verificación de <br>cuenta Usuario                | Los usuarios deben de verificar su teléfono móvil <br>y correo electrónico                                                             | Fundamental | R1          | No Funcional |
-| R5    | Iniciar sesión                                    | Cualquier persona registrado podrá iniciar sesión <br>en el sistema desde la plataforma web                                            | Fundamental | R3,R4       | Funcional    |
-| R5.1  | Tiempo de <br>inactividad                         | La sesión se mantendrá iniciada por un máximo de <br>1 hora después de que comience la inactividad                                     | Fundamental | R5          | No Funcional |
-| R6    | Crear incidencias                                 | El usuario y agente podrán crear incidencias con <br>imágenes, título, descripción y coordenadas                                       | Fundamental | R5          | Funcional    |
-| R6.1  | Imágenes en una <br>incidencia                    | El número máximo de imágenes que se pueden subir <br>son 3 de formato .PNG y .JPG con una capacidad <br>máxima de 50 Mb por incidencia | Fundamental | R5          | No Funcional |
-| R6.2  | Amplitud del texto                                | Los textos estarán limitados a un número máximo <br>de 250 caracteres                                                                  | Deseable    | R5          | No Funcional |
-| R6.3  | Coordenadas GPS                                   | Las coordenadas se obtienen desde el GPS del <br>móvil o a través del uso de coordenadas                                               | Fundamental | R5          | No Funcional |
-| R6.4  | Duplicado de <br>incidencias                      | El sistema reconocerá si la incidencia ya existe <br>en la base datos, por lo que pedirá al creador <br>si es la misma                 | Fundamental | R5          | Funcional    |
-| R7    | Información al <br>usuario                        | Se presentará al usuario toda información <br>necesaria                                                                                | Fundamental |             | Funcional    |
-| R8    | Editar/Eliminar <br>una incidencia                | Los agentes y usuarios podrán editar/eliminar las <br>incidencias que se les hayan asignado o creado, <br>respectivamente              | Fundamental | R5          | Funcional    |
-| R9    | Fusionar incidencias                              | Los agentes tendrán la posibilidad de fusionar <br>una o varias incidencias                                                            | Deseable    | R10         | Funcional    |
-| R10   | Seleccionar <br>incidencias                       | Los agentes deberán poder seleccionar varias <br>incidencias a la vez                                                                  | Deseable    | R5          | Funcional    |
-| R11   | Responder a <br>incidencias                       | Tanto los usuarios como los agentes podrán <br>comentar en la sección de comentarios de una <br>incidencia                             | Fundamental | R6          | Funcional    |
-| R12   | Recibir <br>notificaciones                        | Los agentes y usuarios deberán recibir <br>notificaciones con cualquier cambio que se haya <br>generado que esté relacionado a ellos   | Deseable    | R6, R14     | Funcional    |
-| R13   | Asignación de <br>incidencias                     | Se podrán asignar las incidencias a un agente                                                                                          | Deseable    | R6          | Funcional    |
-| R14   | Ajustes de perfil                                 | Los agentes y usuarios podrán ajustar su perfil <br>en la sección de Ajustes                                                           | Fundamental | R5          | Funcional    |
-| R15   | Restablecer <br>contraseña                        | Los usuarios y agentes podrán restablecer su <br>contraseña en la pantalla de inicio de sesión <br>y en los ajustes de perfil          | Fundamental | R5, R14     | Funcional    |
-| R16   | Estado de <br>incidencias                         | Los agentes podrán cambiar el estado de las <br>incidencias                                                                            | Deseable    | R6          | Funcional    |
-| R17   | Lista de <br>incidencias                          | Los usuarios y agentes tendrán una pestaña donde <br>podrán ver todas las incidencias que hayan <br>creado/sido asignado               | Deseable    | R6          | Funcional    |
-| R17.1 | Máximo número de <br>incidencias en <br>una lista | Las listas enseñarán un máximo de 10 incidencias <br>por página                                                                        | Opcional    | R6          | No Funcional |
-| R18   | Página de inicio                                  | Muestra una lista de incidencias relevante al <br>usuario y agente                                                                     | Fundamental | R6, R16     | Funcional    |
-| R19   | Mapa con incidencias                              | Los agentes tendrán acceso a un mapa con todos <br>las incidencias señalizados por ubicación                                           | Deseable    | R6          | Funcional    |
-| R20   | Estadísticas                                      | Los agentes podrán ver en una pestaña de <br>estadísticas sobre las incidencias                                                        | Opcional    |             | Funcional    |
-| R21   | Archivar incidencias                              | Las incidencias deberán ser archivados después <br>de estar más de dos años en estado cerrado                                          | Opcional    | R6, R16     | No Funcional |
-| R22   | Seguridad                                         | Se usarán certificaciones SSL                                                                                                          | Fundamental |             | No Funcional |
-| R23   | Rellenando datos                                  | Se permitirá un tiempo máximo de 10 minutos <br>para rellenar un formulario                                                            | Deseable    | R3, R4, R6  | No Funcional |
-	
-### 4.2 Funcionales
-Esta sección especifica los requisitos funcionales de sistema que el futuro software debe tener en su entorno. Se aconseja poner un enlace al documento de casos de uso generado por magic draw para que el lector tenga una vista general de las funcionalidades del producto a generar.
+| **ID**    | **Nombre**                                      | **Descripción**                                                                                                                      | **Priodidad**   | **Precedencia** | **Tipo**         |
+|-------|---------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------|-------------|-------------|--------------|
+| R1    | Conexión de internet                        | Deberán tener una conexión estable con el internet                                                                               | Fundamental |             | Funcional    |
+| R1.1  | Navegador web                               | Es necesario que el navegador web soporte HTML5,  geolocalización y subida de imágenes                                           | Fundamental |             | No Funcional |
+| R2    | Aplicación de  escritorio                   | Los agentes necesitan poder instalar la aplicación  en su PC                                                                     | Fundamental | R3          | Funcional    |
+| R2.1  | Sistema Operativo                           | Deben tener un sistema operativo de Windows 10 Home  o Pro                                                                       | Fundamental | R3          | No Funcional |
+| R3    | Crear una cuenta  Agente                    | Los agentes designados por el cliente podrán crear  una cuenta poniéndose en contacto con el equipo de  administradores          | Fundamental | R1          | Funcional    |
+| R4    | Crear una cuenta  Usuario                   | Cualquier persona podrá crear una cuenta de tipo  Usuario desde la plataforma web                                                | Fundamental | R1          | Funcional    |
+| R4.1  | GDPR                                        | Los usuarios y agentes deberán aceptar las normas  establecidas por Clean-Up sobre la ley de la  protección de datos             | Fundamental | R1, R22          | No Funcional |
+| R4.2  | Verificación de  cuenta Usuario             | Los usuarios deben de verificar su teléfono móvil  y correo electrónico                                                          | Fundamental | R1          | No Funcional |
+| R5    | Iniciar sesión                              | Cualquier persona registrado podrá iniciar sesión  en el sistema desde la plataforma web                                         | Fundamental | R3,R4       | Funcional    |
+| R5.1  | Tiempo de  inactividad                      | La sesión se mantendrá iniciada por un máximo de  1 hora después de que comience la inactividad                                  | Fundamental | R5          | No Funcional |
+| R6    | Crear incidencias                           | El usuario y agente podrán crear incidencias con  imágenes, título, descripción y coordenadas                                    | Fundamental | R5          | Funcional    |
+| R6.1  | Imágenes en una  incidencia                 | El número máximo de imágenes que se pueden subir  son 3 de formato .PNG y .JPG con una capacidad  máxima de 50 Mb por incidencia | Fundamental | R5          | No Funcional |
+| R6.2  | Amplitud del texto                          | Los textos estarán limitados a un número máximo  de 250 caracteres                                                               | Deseable    | R5          | No Funcional |
+| R6.3  | Coordenadas GPS                             | Las coordenadas se obtienen desde el GPS del  móvil o a través del uso de coordenadas                                            | Fundamental | R5          | No Funcional |
+| R6.4  | Duplicado de  incidencias                   | El sistema reconocerá si la incidencia ya existe  en la base datos, por lo que pedirá al creador  si es la misma                 | Fundamental | R5          | Funcional    |
+| R7    | Información al  usuario                     | Se presentará al usuario toda información  necesaria                                                                             | Fundamental |             | Funcional    |
+| R8    | Editar/Eliminar  una incidencia             | Los agentes y usuarios podrán editar/eliminar las  incidencias que se les hayan asignado o creado,  respectivamente              | Fundamental | R5          | Funcional    |
+| R9    | Fusionar incidencias                        | Los agentes tendrán la posibilidad de fusionar  una o varias incidencias                                                         | Deseable    | R10         | Funcional    |
+| R10   | Seleccionar  incidencias                    | Los agentes deberán poder seleccionar varias  incidencias a la vez                                                               | Deseable    | R5          | Funcional    |
+| R11   | Responder a  incidencias                    | Tanto los usuarios como los agentes podrán  comentar en la sección de comentarios de una  incidencia                             | Fundamental | R6          | Funcional    |
+| R12   | Recibir  notificaciones                     | Los agentes y usuarios deberán recibir  notificaciones con cualquier cambio que se haya  generado que esté relacionado a ellos   | Deseable    | R6, R14     | Funcional    |
+| R13   | Asignación de  incidencias                  | Se podrán asignar las incidencias a un agente                                                                                    | Deseable    | R6          | Funcional    |
+| R14   | Ajustes de perfil                           | Los agentes y usuarios podrán ajustar su perfil  en la sección de Ajustes                                                        | Fundamental | R5          | Funcional    |
+| R15   | Restablecer  contraseña                     | Los usuarios y agentes podrán restablecer su  contraseña en la pantalla de inicio de sesión  y en los ajustes de perfil          | Fundamental | R5, R14     | Funcional    |
+| R16   | Estado de  incidencias                      | Los agentes podrán cambiar el estado de las  incidencias                                                                         | Deseable    | R6          | Funcional    |
+| R17   | Lista de  incidencias                       | Los usuarios y agentes tendrán una pestaña donde  podrán ver todas las incidencias que hayan  creado/sido asignado               | Deseable    | R6          | Funcional    |
+| R17.1 | Máximo número de  incidencias en  una lista | Las listas enseñarán un máximo de 10 incidencias  por página                                                                     | Opcional    | R6          | No Funcional |
+| R18   | Página de inicio                            | Muestra una lista de incidencias relevante al  usuario y agente                                                                  | Fundamental | R6, R16     | Funcional    |
+| R19   | Mapa con incidencias                        | Los agentes tendrán acceso a un mapa con todos  las incidencias señalizados por ubicación                                        | Deseable    | R6          | Funcional    |
+| R20   | Estadísticas                                | Los agentes podrán ver en una pestaña de  estadísticas sobre las incidencias                                                     | Opcional    |             | Funcional    |
+| R21   | Archivar incidencias                        | Las incidencias deberán ser archivados después  de estar más de dos años en estado cerrado                                       | Opcional    | R6, R16     | No Funcional |
+| R22   | Certificación SSL                              | Se usarán certificaciones SSL                                                                                                    | Fundamental |             | No Funcional |
+| R23   | Rellenando datos                            | Se permitirá un tiempo máximo de 10 minutos  para rellenar un formulario                                                         | Deseable    | R3, R4, R6  | No Funcional |
 
-### 4.3 Calidad de Servicio
-Esta sección establece requisitos no funcionales relacionados con la calidad que deben presentar las funcionales del software.
- 
-#### 4.3.1 Rendimiento
-Si existen requisitos no funcionales de rendimiento para el producto en varias circunstancias, indíquelos aquí y explique sus razones, para ayudar a los desarrolladores a comprender la intención y tomar las decisiones de diseño adecuadas. Especifique las restricciones de tiempo. Haga tales requisitos tan específicos como sea posible. Es posible que deba indicar los requisitos de rendimiento para requisitos funcionales o características individuales.
+Enlace a documento de [Casos de uso](https://github.com/tomgreef/SRS-Template/blob/master/CasosDeUso.pdf).
 
-#### 4.3.2 Seguridad
-Especifique los requisitos no funcionales relacionados con los problemas de seguridad o privacidad relacionados con el uso del producto. 
-* Protección de los datos utilizados o creados por el producto.
-* Requisitos de autenticación de identidad de usuario. 
-* Políticas o regulaciones externas que contengan problemas de seguridad que afecten al producto. 
-* Certificaciones de seguridad o privacidad que deben cumplirse.
+### 4.2 Calidad de Servicio
 
-#### 4.3.3 Fiabilidad
-Especifique los requisitos no funcionales necesarios para establecer la fiabilidad requerida del sistema de software al momento de la entrega.
+#### 4.2.1 Rendimiento
+**R6.1** - El motivo por la cuál se ha optado esas especificaciones es para reducir el tamaño que ocupa cada incidencia en la base de datos, y a su vez optar por un formato específico de imágenes.
 
-#### 4.3.4 Disponibilidad
-Especifique los requisitos no funcionales necesarios para garantizar un nivel de disponibilidad definido para todo el sistema, tiempo mínimo disponible por día, máximos de reinicios permitidos por tiempo, etc.
+**R6.2** - Ayudará con el diseño del sistema, ya que sabiendo que habrá un límite al texto podremos definir un tamaño perfecto para cada sección.
 
-### 4.4 Normativas aplicables
-Especifique los requisitos no funcionales derivados de las normas o regulaciones existentes, que incluyen:
-* Formato de informe
-* Nombre de datos
-* Procedimientos contables
-* Seguimiento de auditoría
+**R17.1** - Reducirá el número de información que pide del base de datos.
 
-### 4.5 Diseño e implementación
+**R21** - Reducirá el tamaño del base de datos.
 
-#### 4.5.1 Instalación
-Restricciones para garantizar que el futuro software se ejecutará sin problemas en la plataforma de implementación de destino.
+#### 4.2.2 Seguridad
+**R4.1** - Haremos que el sistema cumpla con las regulaciones sobre la ley de la protección de datos.
 
-#### 4.5.2 Distribución
-Restricciones en los componentes de software para adaptarse a la estructura distribuida geográficamente de la organización en la que se va a instalar el software, la distribución de datos a procesar o la distribución de dispositivos a controlar.
+**R4.2** - Verificará que el nuevo Usuario verdaderamente es una persona y no un bot.
 
-#### 4.5.3 Mantenimiento
-Especifique los atributos del software que se relacionan con la facilidad de mantenimiento del software en sí. Estos pueden incluir requisitos para cierta modularidad, interfaces o limitación de complejidad. Los requisitos no se deben colocar aquí solo porque son buenas prácticas de diseño.
+**R5.1** - Prevendrá de que alguien no autorizado consiga usar una cuenta que se haya olvidado de salir de la sesión antes de irse.
 
-#### 4.5.4 Reusabilidad
-Software externo que deberá usarse.
+**R22** - Todo los datos que pasan desde el lado del usuario/agente hasta el sistema estarán encriptado.
 
-#### 4.5.5 Portabilidad
-Especifique los atributos del software que se relacionan con la facilidad de portar el software a otras máquinas host y / o sistemas operativos.
+**R23** - Esto nos permitirá que el acceso al base de datos no esté abierto más tiempo de lo necesario.
 
-#### 4.5.6 Coste
-Especifique las limitaciones en el costo del producto de software.
+#### 4.2.3 Disponibilidad
+**R2** - Los agentes siempre podrán seguir trabajando de forma limitado con las incidencias gracias al caché que almacenará un número limitado de incidencias abiertas, para que puedan ser resueltos y enviados al sistema una vez se haya restaurado la conexión al internet.
 
-#### 4.5.7 Fecha de entrega
-Especifique, si tiene, fecha de entrega del producto.
+### 4.3 Diseño e implementación
+
+#### 4.3.1 Reusabilidad
+Para la implementación del sistema, se hará uso del servicio que ofrece Google, llamado [Firebase](https://firebase.google.com/).
+
+#### 4.3.2 Fecha de entrega
+El producto deberá ser entregado a fecha de **5 de Junio, de 2020**.
 
 ## 5. Verificación
-Esta sección proporciona los enfoques y métodos de verificación planeados para calificar el software. Se recomienda que los elementos de información para verificación se proporcionen de manera paralela con los elementos de requisitos en la Sección 4. El propósito del proceso de verificación es proporcionar evidencia objetiva de que un sistema o elemento del sistema cumple con los requisitos y características especificados.
+Para verificar todos los requisitos mencionados en este documento haremos uso de [JUnit 5](https://junit.org/junit5/) que nos servirá para realizar todo el testeo necesario para la aplicación de escritorio del agente.
+
+Luego, para verificar los demás, simplemente bastará con la visualización de los acontecimientos usado el sistema en vivo. Para ello, designamos dos personas que opten por todas las opciones disponibles para ver si se produce algo fuera de lo escrito en este documento.
 
 
 ## 6. Apendices
-### Apéndice A: Ejemplos de este documento relleno
-Incluir y referenciar en el documento tantos apéndices como sea necesario. Los siguientes, son ejemplo de este documento (con algunas modificaciones), relleno:
 
-[Ejemplo relleno en inglés 1](https://arxiv.org/pdf/1005.0330.pdf)
-[Ejemplo relleno en inglés 2](http://www.cse.chalmers.se/~feldt/courses/reqeng/examples/srs_example_2010_group2.pdf)
+### Apéndice A: Ejemplos de este documento relleno
+
+[Ejemplo relleno en inglés](http://www.cse.chalmers.se/~feldt/courses/reqeng/examples/srs_example_2010_group2.pdf)
+[Ejemplo relleno en español](https://sites.google.com/site/ingesoftuao/definicion-proyecto)
 
 ### Apéndice B: Generar PDF usando un fichero MD
-Hay multitud de herramientas online y offline, por ejemplo: https://www.markdowntopdf.com/
+
+[Dillinger](https://dillinger.io/)
+
+### Apéndice C: Crear una tabla para un fichero MD
+
+[Tables Generato](https://www.tablesgenerator.com/markdown_tables#)
+
+### Apéndice D: Crear interfaces simples
+
+[Balsamiq](https://balsamiq.com/wireframes/)
