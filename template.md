@@ -157,214 +157,284 @@ Esta sección especifica los requisitos del producto a nivel de sistema y desglo
 
 ### ID - Nombre del requisito
 Descripción
-##### Dependencias 
-##### Prioridad
+#### Dependencias 
+#### Prioridad
 ###
 ###
 ***
 ***
 ###
 
-### R1 - Tener una conexión al internet
-Para el uso de la plataforma web, es necesario tener una conexión con el internet estable. En caso de no tenerla, se producirá un error indicando que no está conectado el internet, normalmente generado por el navegador web.
-##### Ninguna
-##### Fundamental
+### R1 - Conexión al internet
+Para el uso de la plataforma web, es necesario tener una conexión con el internet estable.
+#### Ninguna
+#### Fundamental
 ###
 ***
 
-### R2 - Tener la aplicación escritorio
-Los agentes podrán tener instalado la aplicación de escritorio para agentes en su PC, accesible desde la plataforma web. Deben tener un Sistema Operativo (OS) de Windows 10 Home o Pro. Además, la aplicación de escritorio tiene un caché para poder seguir resolviendo un número limitado de incidencias sin tener una conexión a internet.
-##### R3
-##### Fundamental
+### R1.1 - Navegador Web
+Para el correcto funcionamiento de la aplicación, es necesario que el navegador web soporte HTML5, geolocalización y subida de imágenes.
+#### Ninguna
+#### Fundamental
+###
+***
+
+### R2 - Aplicación de escritorio
+Los agentes podrán tener instalado la aplicación de escritorio para agentes en su PC, accesible desde la plataforma web. Además, la aplicación de escritorio tendrá un caché para poder seguir resolviendo un número limitado de incidencias sin tener una conexión a internet.
+#### R3
+#### Fundamental
+###
+***
+
+### R2.1 - Sistema operativo
+Deben tener un sistema operativo de Windows 10 Home o Pro.
+#### R3
+#### Fundamental
 ###
 ***
 
 ### R3 - Crear una cuenta Agente
-Los agentes designados por el cliente podrán crear una cuenta poniéndose en contacto con el equipo de administradores. Estos tendrán que verificarlo con el cliente y después podrán ser cambiados a tipo Agente. El agente deberá aceptar las normas establecidas por Clean-Up sobre la ley de la protección de datos.
-##### R1
-##### Fundamental
+Los agentes designados por el cliente podrán crear una cuenta poniéndose en contacto con el equipo de administradores. Estos tendrán que verificarlo con el cliente y después podrán ser cambiados a tipo Agente.
+#### R1
+#### Fundamental
 ###
 ***
 
 ### R4 - Crear una cuenta Usuario
-Cualquier persona podrá crear una cuenta de tipo Usuario desde la plataforma web para poder crear incidencias. El usuario deberá aceptar las normas establecidas por Clean-Up sobre la ley de la protección de datos. Finalmente, los usuarios deben de verificar su teléfono móvil a través de un SMS para completar el proceso, y una vez completado, se deberá verificar el correo electrónico.
-##### R1
-##### Fundamental
+Cualquier persona podrá crear una cuenta de tipo Usuario desde la plataforma web para poder crear incidencias.
+#### R1
+#### Fundamental
 ###
 ***
 
-### R5 - Iniciar Sessión
-Cualquier persona registrado podrá iniciar sessión en el sistema siempre y cuando tenga una conexión con el internet. La sessión se mantendrá iniciada por un máximo de 1 hora después de que comience la inactividad.
-##### R3 - R4
-##### Fundamental
+### R4.1 - GDPR
+Los usuarios y agentes deberán aceptar las normas establecidas por Clean-Up sobre la ley de la protección de datos.
+#### R1
+#### Fundamental
+###
+***
+
+### R4.2 - Verificación de cuenta Usuario
+Los usuarios deben de verificar su teléfono móvil a través de un SMS para completar el proceso, y una vez completado, se deberá verificar el correo electrónico.
+#### R1
+#### Fundamental
+###
+***
+
+### R5 - Iniciar sesión
+Cualquier persona registrado podrá iniciar sesión en el sistema siempre y cuando tenga una conexión con el internet.
+#### R3, R4
+#### Fundamental
+###
+***
+
+### R5.1 - Tiempo de inactividad
+La sesión se mantendrá iniciada por un máximo de 1 hora después de que comience la inactividad.
+#### R5
+#### Fundamental
 ###
 ***
 
 ### R6 - Crear incidencias
-El usuario y agente pueden crear incidencias con imágenes, título, descripción y coordenadas para ser resueltos por los agentes del cliente. El número máximo de imágenes que se pueden subir son 3 de formato .PNG y .JPG. Los textos estarán limitados a un número máximo de 300 caracteres. Las coordenadas se obtienen desde el GPS del móvil, pero si se solicita la incidencia desde otro lugar, entonces el sistema permitirá el uso de coordenadas. El sistema reconocerá si la incidencia ya existe en el base datos, por lo que pedirá al creador si es la misma. En caso afirmativo, se añadirá esa incidencia como sub-incidencia de la que estaba en la base de datos anteriormente. En caso contrario, se creará una nueva incidencia.
-##### R5
-##### Fundamental
+El usuario y agente podrán crear incidencias con imágenes, título, descripción y coordenadas para ser resueltos por los agentes del cliente.
+#### R5
+#### Fundamental
 ###
 ***
 
-### R7 - Información al Usuario
-Se debe presentar al usuario toda información necesaria, tanto legal como el funcionamiento del mismo en la parte inferior de la plataforma.
-##### Ninguna 
-##### Deseable
+### R6.1 - Imágenes en una incidencia
+El número máximo de imágenes que se pueden subir son 3 de formato .PNG y .JPG con una capacidad máxima de 50 Mb por incidencia.
+#### R5
+#### Fundamental
+###
+***
+
+### R6.2 - Amplitud del texto
+Los textos estarán limitados a un número máximo de 250 caracteres.
+#### R5
+#### Deseable
+###
+***
+
+### R6.3 - Coordenadas GPS
+Las coordenadas se obtienen desde el GPS del móvil o a través del uso de coordenadas.
+#### R5
+#### Fundamental
+###
+***
+
+### R6.4 - Duplicado de incidencia
+El sistema reconocerá si la incidencia ya existe en la base datos, por lo que pedirá al creador si es la misma. En caso afirmativo, se añadirá esa incidencia como sub-incidencia de la que estaba en la base de datos anteriormente. En caso contrario, se creará una nueva incidencia.
+#### R5
+#### Fundamental
+###
+***
+
+### R7 - Información al usuario
+Se presentará al usuario toda información necesaria, tanto legal como el funcionamiento del mismo en la parte inferior de la plataforma.
+#### Ninguna 
+#### Fundamental
 ###
 ***
 
 ### R8 - Editar/Eliminar una incidencia
 Los agentes y usuarios podrán editar/eliminar las incidencias. Los usuarios sólo podrán modificar aquellos de los que sean propietarios, mientras que los agentes pueden cambiar cualquier incidencia. La opción de eliminar una incidencia se mostrará a través de un botón que hará que el sistema pida por una confirmación del usuario.
-##### R5 
-##### Fundamental
+#### R5 
+#### Fundamental
 ###
 ***
 
 ### R9 - Fusionar incidencias
 Los agentes tendrán la posibilidad de fusionar una o varias incidencias, seleccionándolas y eligiendo la opción de fusionar. Esto permitirá al agente seleccionar una incidencia como principal y vincular los demás como un sub-incidencia de la principal seleccionado.
-##### R10 
-##### Deseable
+#### R10 
+#### Deseable
 ###
 ***
 
 ### R10 - Seleccionar incidencias
 Los agentes deberán poder seleccionar varias incidencias a la vez para poder gestionarlas simultáneamente.
-##### R5 
-##### Deseable
+#### R5 
+#### Deseable
 ###
 ***
 
 ### R11 - Responder a incidencias
-Tanto los usuarios como los agentes podrán comentar en la sección de comentarios de una incidencia. Tras cada respuesta, se notificará al agente o al usuario, dependiendo de quién comentó. Es decir, si el agente escribiera un comentario en una incidencia creado por un usuario, este usuario recibirá una notificación. Los comentarios serán limitados por un máximo de 300 caracteres.
-##### R6 
-##### Fundamental
+Tanto los usuarios como los agentes podrán comentar en la sección de comentarios de una incidencia. Tras cada respuesta, se notificará al agente o al usuario, dependiendo de quién comentó. Es decir, si el agente escribiera un comentario en una incidencia creado por un usuario, este usuario recibirá una notificación.
+#### R6 - R6.2
+#### Fundamental
 ###
 ***
 
 ### R12 - Recibir notificaciones
 Los agentes y usuarios deberán recibir notificaciones con cualquier cambio que se haya generado a una incidencia de la cual es propietario o asignado. Estas notificaciones podrán ser cambiado en los ajustes de perfil.
-##### R14 - R6
-##### Deseable
+#### R14 - R6
+#### Deseable
 ###
 ***
 
 ### R13 - Asignación de incidencias
-En el caso de haber múltiples agentes, se podrán asignar las incidencias a un agente. De esta forma, las notificaciones de incidencias asignados al agente llegarán solamente a este agente.
-##### R6 
-##### Deseable
+Se podrán asignar las incidencias a un agente. De esta forma, las notificaciones de incidencias asignados al agente llegarán solamente a este agente.
+#### R6 
+#### Deseable
 ###
 ***
 
 ### R14 - Ajustes de perfil
 Los agentes y usuarios podrán ajustar su perfil en la sección de Ajustes. Aquí podrán cambiar sus datos, eliminar la cuenta, y cambiar la preferencia de notificaciones.
-##### R5 
-##### Fundamental
+#### R5 
+#### Fundamental
 ###
 ***
 
 ### R15 - Restablecer contraseña
-Los usuarios y agentes podrán restablecer su contraseña en la pantalla para iniciar sessión y en los ajustes de perfil.
-##### R5 - R14 
-##### Fundamental
+Los usuarios y agentes podrán restablecer su contraseña en la pantalla de inicio de sesión y en los ajustes de perfil.
+#### R5 - R14 
+#### Fundamental
 ###
 ***
 
 ### R16 - Estado de incidencias
 Los agentes podrán cambiar el estado de las incidencias de tal forma que solo trabajarían con aquellas incidencias que estén en estado "abierta". Y los finalizados estarían en estado "Cerrado".
-##### R6 
-##### Opcional
+#### R6 
+#### Deseable
 ###
 ***
 
 ### R17 - Lista de incidencias creados/asignados
 Los usuarios y agentes tendrán una pestaña donde podrán ver todas las incidencias que hayan creado/sido asignado. Esta lista enseñará un máximo de 10 incidencias por página.
-##### R6 
-##### Opcional
+#### R6 
+#### Deseable
+###
+***
+
+### R17.1 - Máximo número de incidencias en una lista
+Las listas enseñarán un máximo de 10 incidencias por página.
+#### R6 
+#### Opcional
 ###
 ***
 
 ### R18 - Página de inicio
-La página principal de la plataforma web para los usuarios será una lista de incidencias que se ubican en su código postal, mientras que para los agentes será una lista de todas las incidencias que quedan por resolver.
-##### R16 - R6 
-##### Fundamental
+La página principal de la plataforma web para los usuarios será una lista de incidencias que se ubican en su código postal, mientras que para los agentes será una lista de todas las incidencias que se les hayan asignado y estén abiertos.
+#### R16 - R6 
+#### Fundamental
 ###
 ***
 
 ### R19 - Mapa con incidencias
 Los agentes tendrán acceso a un mapa con todos las incidencias señalizados por ubicación, permitiendo el acceso a cualquier incidencia desde ese mapa.
-##### R6 
-##### Deseable
+#### R6 
+#### Deseable
 ###
 ***
 
 ### R20 - Estadísticas
 Los agentes podrán ver en una pestaña de estadísticas donde se verán los tiempos de respuestas y el tiempo en la que se tarda para resolver una incidencia.
-##### Ninguna 
-##### Opcional
+#### Ninguna 
+#### Opcional
 ###
 ***
 
-### R21 - Archivar Incidencias
+### R21 - Archivar incidencias
 Las incidencias deberán ser archivados después de estar más de dos años en estado cerrado. Se archivarán a una localización especificado por el cliente o agentes.
-##### R6 
-##### Opcional
+#### R6 - R16
+#### Opcional
 ###
 ***
 
-### ID - Nombre del requisito
-Descripción
-##### Dependencias 
-##### Prioridad
+### R22 - Seguridad
+Para cumplir con las normas de GDPR, se usarán certificaciones SSL.
+#### Ninguna 
+#### Fundamental
 ###
 ***
 
-### ID - Nombre del requisito
-Descripción
-##### Dependencias 
-##### Prioridad
+### R23 - Rellenando datos
+En cualquier proceso de rellenar datos como es la creación de una cuenta o una incidencia, se le permitirá un tiempo máximo de 10 minutos.
+#### R3 - R4 - R6 
+#### Deseable
 ###
-***
-
-### ID - Nombre del requisito
-Descripción
-##### Dependencias 
-##### Prioridad
-###
-***
-
-### ID - Nombre del requisito
-Descripción
-##### Dependencias 
-##### Prioridad
-###
-***
-
-### ID - Nombre del requisito
-Descripción
-##### Dependencias 
-##### Prioridad
-###
-***
 
 ### 4.1 Precedencia y prioridad
-Esta sección está compuesta por una tabla que resumirá todos los requisitos especificados en las secciones siguientes. Se debe detallar un ID único, un nombre de requisito, su descripción, la prioridad de ese requisitos (es algo **Fundamental** a desarrollar; es **Deseable** tenerlo para que el cliente esté satisfecho; o es algo **Opcional** que estaría bien desarrollar si el tiempo lo permite), su precedencia (requisitos que deberán ser implementados antes) y el tipo (funcional o no funcional).
 
-Esta tabla se generará en paralelo a las secciones correspondientes, y se completará cuando todas las secciones estén terminadas. Os recomiendo hacerla en excel e importarla en https://www.tablesgenerator.com/markdown_tables para generar la tabla en formato Markdown. Meter retornos de carro para que no se alarge mucho la tabla y usad la opción *_line break as <br>_* para que esos retornos de carro sean efectivos al copiarlos.
-
-
-| Id 	| Nombre 	| Descripción 	| Priodidad 	| Precedencia 	| Tipo 	|
-|:--:	|:----------------------------:	|:----------------------------------------------------------------------------------------------------------------------------------------------------------------:	|:-------------------:	|:-----------:	|-----------	|
-| R3 	| Datos de clientes 	| El sistema deberá registar los datos de los clientes<br>para su posterior tratamiento. Estos incluirán su <br>nombre, DNI, fecha de nacimiento, género y e-mail. 	| <br>Fundamental<br> 	|  	| Funcional 	|
-| R4 	| Modificar datos <br>clientes 	| El sistema permitirá modificar el e-mail del cliente. 	| Fundamental 	| R3 	| Funcional 	|
-|  	|  	|  	|  	|  	|  	|
+| **Id**    | **Nombre**                                            | **Descripción**                                                                                                                            | **Priodidad**   | **Precedencia** | **Tipo**         |
+|-------|---------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------|-------------|-------------|--------------|
+| R1    | Conexión de internet                              | Deberán tener una conexión estable con el internet                                                                                     | Fundamental |             | Funcional    |
+| R1.1  | Navegador web                                     | Es necesario que el navegador web soporte HTML5, <br>geolocalización y subida de imágenes                                              | Fundamental |             | No Funcional |
+| R2    | Aplicación de <br>escritorio                      | Los agentes necesitan poder instalar la aplicación <br>en su PC                                                                        | Fundamental | R3          | Funcional    |
+| R2.1  | Sistema Operativo                                 | Deben tener un sistema operativo de Windows 10 Home <br>o Pro                                                                          | Fundamental | R3          | No Funcional |
+| R3    | Crear una cuenta <br>Agente                       | Los agentes designados por el cliente podrán crear <br>una cuenta poniéndose en contacto con el equipo de <br>administradores          | Fundamental | R1          | Funcional    |
+| R4    | Crear una cuenta <br>Usuario                      | Cualquier persona podrá crear una cuenta de tipo <br>Usuario desde la plataforma web                                                   | Fundamental | R1          | Funcional    |
+| R4.1  | GDPR                                              | Los usuarios y agentes deberán aceptar las normas <br>establecidas por Clean-Up sobre la ley de la <br>protección de datos             | Fundamental | R1          | No Funcional |
+| R4.2  | Verificación de <br>cuenta Usuario                | Los usuarios deben de verificar su teléfono móvil <br>y correo electrónico                                                             | Fundamental | R1          | No Funcional |
+| R5    | Iniciar sesión                                    | Cualquier persona registrado podrá iniciar sesión <br>en el sistema desde la plataforma web                                            | Fundamental | R3,R4       | Funcional    |
+| R5.1  | Tiempo de <br>inactividad                         | La sesión se mantendrá iniciada por un máximo de <br>1 hora después de que comience la inactividad                                     | Fundamental | R5          | No Funcional |
+| R6    | Crear incidencias                                 | El usuario y agente podrán crear incidencias con <br>imágenes, título, descripción y coordenadas                                       | Fundamental | R5          | Funcional    |
+| R6.1  | Imágenes en una <br>incidencia                    | El número máximo de imágenes que se pueden subir <br>son 3 de formato .PNG y .JPG con una capacidad <br>máxima de 50 Mb por incidencia | Fundamental | R5          | No Funcional |
+| R6.2  | Amplitud del texto                                | Los textos estarán limitados a un número máximo <br>de 250 caracteres                                                                  | Deseable    | R5          | No Funcional |
+| R6.3  | Coordenadas GPS                                   | Las coordenadas se obtienen desde el GPS del <br>móvil o a través del uso de coordenadas                                               | Fundamental | R5          | No Funcional |
+| R6.4  | Duplicado de <br>incidencias                      | El sistema reconocerá si la incidencia ya existe <br>en la base datos, por lo que pedirá al creador <br>si es la misma                 | Fundamental | R5          | Funcional    |
+| R7    | Información al <br>usuario                        | Se presentará al usuario toda información <br>necesaria                                                                                | Fundamental |             | Funcional    |
+| R8    | Editar/Eliminar <br>una incidencia                | Los agentes y usuarios podrán editar/eliminar las <br>incidencias que se les hayan asignado o creado, <br>respectivamente              | Fundamental | R5          | Funcional    |
+| R9    | Fusionar incidencias                              | Los agentes tendrán la posibilidad de fusionar <br>una o varias incidencias                                                            | Deseable    | R10         | Funcional    |
+| R10   | Seleccionar <br>incidencias                       | Los agentes deberán poder seleccionar varias <br>incidencias a la vez                                                                  | Deseable    | R5          | Funcional    |
+| R11   | Responder a <br>incidencias                       | Tanto los usuarios como los agentes podrán <br>comentar en la sección de comentarios de una <br>incidencia                             | Fundamental | R6          | Funcional    |
+| R12   | Recibir <br>notificaciones                        | Los agentes y usuarios deberán recibir <br>notificaciones con cualquier cambio que se haya <br>generado que esté relacionado a ellos   | Deseable    | R6, R14     | Funcional    |
+| R13   | Asignación de <br>incidencias                     | Se podrán asignar las incidencias a un agente                                                                                          | Deseable    | R6          | Funcional    |
+| R14   | Ajustes de perfil                                 | Los agentes y usuarios podrán ajustar su perfil <br>en la sección de Ajustes                                                           | Fundamental | R5          | Funcional    |
+| R15   | Restablecer <br>contraseña                        | Los usuarios y agentes podrán restablecer su <br>contraseña en la pantalla de inicio de sesión <br>y en los ajustes de perfil          | Fundamental | R5, R14     | Funcional    |
+| R16   | Estado de <br>incidencias                         | Los agentes podrán cambiar el estado de las <br>incidencias                                                                            | Deseable    | R6          | Funcional    |
+| R17   | Lista de <br>incidencias                          | Los usuarios y agentes tendrán una pestaña donde <br>podrán ver todas las incidencias que hayan <br>creado/sido asignado               | Deseable    | R6          | Funcional    |
+| R17.1 | Máximo número de <br>incidencias en <br>una lista | Las listas enseñarán un máximo de 10 incidencias <br>por página                                                                        | Opcional    | R6          | No Funcional |
+| R18   | Página de inicio                                  | Muestra una lista de incidencias relevante al <br>usuario y agente                                                                     | Fundamental | R6, R16     | Funcional    |
+| R19   | Mapa con incidencias                              | Los agentes tendrán acceso a un mapa con todos <br>las incidencias señalizados por ubicación                                           | Deseable    | R6          | Funcional    |
+| R20   | Estadísticas                                      | Los agentes podrán ver en una pestaña de <br>estadísticas sobre las incidencias                                                        | Opcional    |             | Funcional    |
+| R21   | Archivar incidencias                              | Las incidencias deberán ser archivados después <br>de estar más de dos años en estado cerrado                                          | Opcional    | R6, R16     | No Funcional |
+| R22   | Seguridad                                         | Se usarán certificaciones SSL                                                                                                          | Fundamental |             | No Funcional |
+| R23   | Rellenando datos                                  | Se permitirá un tiempo máximo de 10 minutos <br>para rellenar un formulario                                                            | Deseable    | R3, R4, R6  | No Funcional |
 	
-
-
 ### 4.2 Funcionales
 Esta sección especifica los requisitos funcionales de sistema que el futuro software debe tener en su entorno. Se aconseja poner un enlace al documento de casos de uso generado por magic draw para que el lector tenga una vista general de las funcionalidades del producto a generar.
-
-
 
 ### 4.3 Calidad de Servicio
 Esta sección establece requisitos no funcionales relacionados con la calidad que deben presentar las funcionales del software.
