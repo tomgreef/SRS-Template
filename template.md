@@ -2,8 +2,11 @@
 ## Del proyecto Clean-Up
 
 Versión 0.1  
-Generada por Tom van Greevenbroek 
+
+Generada por Tom van Greevenbroek
+
 Estudiante de la Universidad de Málaga (UMA)
+
 11/04/2020 
 
 Índice
@@ -27,21 +30,13 @@ Estudiante de la Universidad de Málaga (UMA)
     * 3.3 [Interfaces con el Software](#33-interfaces-con-el-software)
 * 4 [Requisitos](#4-requisitos)
   * 4.1 [Precedencia y prioridad](#41-precedencia-y-prioridad) 
-  * 4.2 [Funcionales](#42-funcionales)
-  * 4.3 [Calidad de Servicio](#43-calidad-de-servicio)
-    * 4.3.1 [Rendimiento](#431-rendimiento)
-    * 4.3.2 [Seguridad](#432-seguridad)
-    * 4.3.3 [Fiabilidad](#433-fiabilidad)
-    * 4.3.4 [Disponibilidad](#434-disponibilidad)
-  * 4.4 [Normativas aplicables](#44-normativas-aplicables)
-  * 4.5 [Diseño e implementación](#45-diseño-e-implementación)
-    * 4.5.1 [Instalación](#451-instalación)
-    * 4.5.2 [Distribución](#452-distribución)
-    * 4.5.3 [Mantenimiento](#453-mantenimiento)
-    * 4.5.4 [Reusabilidad](#454-reusabilidad)
-    * 4.5.5 [Portabilidad](#455-portabilidad)
-    * 4.5.6 [Coste](#456-coste)
-    * 4.5.7 [Fecha de Entrega](#457-fecha-de-entrega)
+  * 4.2 [Calidad de Servicio](#42-calidad-de-servicio)
+    * 4.2.1 [Rendimiento](#421-rendimiento)
+    * 4.2.2 [Seguridad](#422-seguridad)
+    * 4.2.3 [Disponibilidad](#423-disponibilidad)
+  * 4.3 [Diseño e implementación](#43-diseño-e-implementación)
+    * 4.3.1 [Reusabilidad](#431-reusabilidad)
+    * 4.3.2 [Fecha de Entrega](#432-fecha-de-entrega)
 * 5 [Verificación](#5-verificación)
 * 6 [Apendices](#6-apendices) 
   
@@ -57,7 +52,7 @@ Este documento contiene todos los requisitos de software que especifican el prod
 El propósito de este documento es **mostrar de una forma clara las características o especificaciones** con que cuenta este software.
 
 ### 1.2 Ámbito del proyecto
-El proyecto trata sobre una plataforma en la que los ciudadanos residentes de un área en concreto podrán publicar desperfectos ubicados en la vía pública, con la intención de que los responsables, en este caso, el Ayuntamiento, los arregle.
+El proyecto trata sobre **una plataforma en la que los ciudadanos residentes de un área en concreto podrán publicar desperfectos ubicados en la vía pública**, con la intención de que los responsables, en este caso, el Ayuntamiento, los arregle.
 
 Este documento especificará por completo al sistema, ya que el software constará como intermediario entre los usuarios afectados por su zona y los agentes destinados a resolver esas incidencias, permitiendo al ayuntamiento y ciudadanos estar informado sobre todo lo que ocurre en su zona, y permitirá el arreglo de cualquier incidencia si fuese posible por parte del ayuntamiento.
 
@@ -86,16 +81,13 @@ Planificación - V1
 Interfaz
     : 10/04/2020 [Definición de un Interfaz](https://definicion.de/interfaz/)
 
-
-**//Enumere y enlace cualquier otro documento o dirección web a la que se refiera este SRS. Estos pueden incluir guías de estilo de la interfaz de usuario, contratos, estándares a seguir, especificaciones de requisitos del sistema, documentos de casos de uso o un documento de visión y alcance. Proporcione suficiente información para que el lector pueda acceder a una copia de cada referencia, incluido el título, autor, número de versión, fecha y fuente o ubicación.**
-
 ### 1.5 Resumen del documento
-Este documento contiene, como complemento a lo anterior, una vista general del producto donde se especifica varios aspectos del producto, al igual que se habrá una sección que trata sobre los interfaces dirigidos a las distintas entidades que usarán este software. Así mismo, tambien contendrá contenido sobre la verificación de todo lo mencionado es este documento.
+Este documento contiene, como complemento a lo anterior, **una vista general del producto** donde se especifica **varios aspectos del producto**, al igual que se habrá una sección que trata sobre los interfaces dirigidos a las distintas entidades que usarán este software. Así mismo, también contendrá contenido sobre la verificación de todo lo mencionado es este documento.
 
 ## 2. Vista general del producto
 
 ### 2.1 Perspectiva del producto
-El sistema será creado desde cero y consistirá en dos partes: una dirreccionado a los usuarios y otra a los agentes. Ambos accederán a la misma base de datos, aunque tendrían interfaces distintos. 
+El sistema será creado desde cero y consistirá en dos partes: una para los usuarios y otra para los agentes. Ambos accederán a la misma base de datos, aunque tendrían interfaces distintos. 
 
 ![example image](https://d2slcw3kip6qmk.cloudfront.net/marketing/pages/chart/uml/deployment-diagram/deployment-diagram-example-700x412.jpeg)
 *Gratis Omah - [Deployment Diagram Tutorial Lucidchart](https://gratisomah.blogspot.com/2018/08/contoh-hardware-server.html)*
@@ -105,16 +97,16 @@ Los usuarios podrán publicar incidencias a través de la plataforma web de mane
 
 Si la incidencia ya existiese, se le preguntará al usuario de verificar si fuese el mismo o no. En caso que lo fuese, su incidencia se subirá a la plataforma en forma de sub-incidencia, por lo que tendría una relación con la incidencia principal (o primera).
 
-Un agente podrá trabajar con esas incidencias que llegan a su portal, permitiendoles responder a los usuarios para pedir más información o para indicar que esta arreglado, por lo que la incidencia cambiaría a otro estado (cerrado). Una vez cerrado, todas las sub-incidencias de esa incidencia principal serán cerrados también, notificando a todos los usuarios que crearon esas incidencias.
+Un agente podrá trabajar con esas incidencias que llegan a su portal, permitiéndoles responder a los usuarios para pedir más información o para indicar que esta arreglado, por lo que la incidencia cambiaría a otro estado (cerrado). Una vez cerrado, todas las sub-incidencias de esa incidencia principal serán cerrados también, notificando a todos los usuarios que crearon esas incidencias.
 
-Los agentes también pueden ver en una representación geográfica todas las incidencias, permitiendoles saber que áreas están más afectados. 
+Los agentes también pueden ver en una representación geográfica todas las incidencias, informando al agente sobre que áreas están más afectados. 
 
 ### 2.3 Restricciones del producto
 Cada incidencia permitirá adjuntar un total de 3 imágenes, con una descripción y título limitado por un número limitado de carácteres.
 
 También se cumplimentará con las leyes sobre la protección de datos establecidos por [La Agencia Española de Protección de Datos](https://www.aepd.es/es).
 
-Finalmente, los agentes debería poder trabajar de forma limitada, hasta sin conección de internet. Ya que podrían haber situaciones en la que no hubiese una coneccion a internet.
+Finalmente, los agentes debería poder trabajar de forma limitada, hasta sin conexión de internet. Ya que podrían haber situaciones en la que no hubiese una conexión a internet.
 
 ### 2.4 Perfiles de usuario
 Los perfiles de usuarios serán aquellos ciudadanos que se preocupan por sus entornos, ya que la única forma en la que se pueda arreglar algo en la vía pública es a través del ayuntamiento.
